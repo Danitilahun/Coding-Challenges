@@ -71,7 +71,7 @@ Replace `<Path>` with the actual path to your `ccwc.py` file.
 
 #### Run with:
 ```cmd
-ccwc.bat -l test.txt
+ccwc -l test.txt
 ```
 
 ## File Structure
