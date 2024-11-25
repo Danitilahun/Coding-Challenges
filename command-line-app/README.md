@@ -108,15 +108,3 @@ td -r 1
 
 - The tasks are stored in a file located at `C:\Users\<your-username>\tasks.txt`.
 - Ensure the `todo.py` script has proper permissions to read/write to this file.
-
----
-
-## Contributing
-
-Feel free to fork the project, make changes, and submit a pull request. Suggestions and improvements are always welcome!
-
----
-
-## License
-
-This project is open-source and available under the [MIT License](LICENSE).
