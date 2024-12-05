@@ -1,2 +1,2 @@
 @echo off
-python "C:\Users\<Path>\ccwc.py" %*
+python "C:\Users\tiled\OneDrive\Desktop\Coding-Challenges\word_count\ccwc.py" %*
