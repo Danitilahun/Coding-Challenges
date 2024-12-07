@@ -1,25 +1,39 @@
 import sys
 import os
-from src.main_solution import process_and_calculate
+from src.main_solution import process_and_compress, process_and_decompress
 
 
 def main():
-    if len(sys.argv) != 2:
-        print("Usage: python main.py <filename>")
+    if len(sys.argv) < 4:
+        print("Usage: python main.py <compress|decompress> <input_filename> <output_filename>")
         sys.exit(1)
 
-    filename = sys.argv[1]
+    action = sys.argv[1]
+    input_filename = sys.argv[2]
+    output_filename = sys.argv[3]
 
-    absolute_path = os.path.abspath(filename)
+    if not os.path.isfile(input_filename):
+        print(f"Error: The file '{input_filename}' does not exist.")
+        sys.exit(1)
 
     try:
+        if action == "compress":
+            print(f"Compressing '{input_filename}' into '{output_filename}'...")
+            process_and_compress(input_filename, output_filename)
+            print("Compression successful!")
 
-        frequency = process_and_calculate(absolute_path)
-        print("Character Frequencies:")
-        for char, freq in frequency.items():
-            print(f"{repr(char)}: {freq}")
+        elif action == "decompress":
+            print(f"Decompressing '{input_filename}' into '{output_filename}'...")
+            process_and_decompress(input_filename, output_filename)
+            print("Decompression successful!")
+
+        else:
+            print("Error: Invalid action. Use 'compress' or 'decompress'.")
+            sys.exit(1)
+
     except Exception as e:
-        print(str(e))
+        print(f"An error occurred: {e}")
+        sys.exit(1)
 
 
 if __name__ == "__main__":

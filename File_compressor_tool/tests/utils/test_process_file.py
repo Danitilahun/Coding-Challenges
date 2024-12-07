@@ -6,7 +6,7 @@ from tests.infrastructure.steps import (
     prepare_file_system,
     create_invalid_file,
 )
-from src.utils.file_reader import process_file
+from src.utils.file_handler import process_file
 
 
 class ProcessFileTest(unittest.TestCase):

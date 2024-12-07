@@ -1,7 +1,8 @@
 from collections import Counter
+from typing import Dict
 
 
-def calculate_character_frequency(text: str) -> dict:
+def calculate_character_frequency(text: str) -> Dict[str,int]:
     """
     Calculates the frequency of each character in the given text.
 
