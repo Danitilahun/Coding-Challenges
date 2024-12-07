@@ -49,14 +49,6 @@
         "documentation": {}
     },
     {
-        "label": "cast",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
         "label": "HuffmanNode",
         "importPath": "src.huffman.huffman_node",
         "description": "src.huffman.huffman_node",
@@ -81,21 +73,35 @@
         "documentation": {}
     },
     {
-        "label": "ast",
-        "kind": 6,
+        "label": "HuffmanNode",
+        "importPath": "src.huffman.huffman_node",
+        "description": "src.huffman.huffman_node",
         "isExtraImport": true,
-        "importPath": "ast",
-        "description": "ast",
-        "detail": "ast",
+        "detail": "src.huffman.huffman_node",
         "documentation": {}
     },
     {
-        "label": "os",
-        "kind": 6,
+        "label": "HuffmanNode",
+        "importPath": "src.huffman.huffman_node",
+        "description": "src.huffman.huffman_node",
         "isExtraImport": true,
-        "importPath": "os",
-        "description": "os",
-        "detail": "os",
+        "detail": "src.huffman.huffman_node",
+        "documentation": {}
+    },
+    {
+        "label": "HuffmanTree",
+        "importPath": "src.huffman.huffman_coding_trees",
+        "description": "src.huffman.huffman_coding_trees",
+        "isExtraImport": true,
+        "detail": "src.huffman.huffman_coding_trees",
+        "documentation": {}
+    },
+    {
+        "label": "HuffmanTree",
+        "importPath": "src.huffman.huffman_coding_trees",
+        "description": "src.huffman.huffman_coding_trees",
+        "isExtraImport": true,
+        "detail": "src.huffman.huffman_coding_trees",
         "documentation": {}
     },
     {
@@ -123,6 +129,41 @@
         "documentation": {}
     },
     {
+        "label": "deserialize_tree",
+        "importPath": "src.huffman.tree_deserialization",
+        "description": "src.huffman.tree_deserialization",
+        "isExtraImport": true,
+        "detail": "src.huffman.tree_deserialization",
+        "documentation": {}
+    },
+    {
+        "label": "itertools",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "itertools",
+        "description": "itertools",
+        "detail": "itertools",
+        "documentation": {}
+    },
+    {
+        "label": "ast",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "ast",
+        "description": "ast",
+        "detail": "ast",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
         "label": "Counter",
         "importPath": "collections",
         "description": "collections",
@@ -131,23 +172,23 @@
         "documentation": {}
     },
     {
-        "label": "process_file",
-        "importPath": "src.utils.file_handler",
-        "description": "src.utils.file_handler",
-        "isExtraImport": true,
-        "detail": "src.utils.file_handler",
-        "documentation": {}
-    },
-    {
         "label": "read_compressed_file",
-        "importPath": "src.utils.file_handler",
-        "description": "src.utils.file_handler",
+        "importPath": "src.huffman.huffman_io",
+        "description": "src.huffman.huffman_io",
         "isExtraImport": true,
-        "detail": "src.utils.file_handler",
+        "detail": "src.huffman.huffman_io",
         "documentation": {}
     },
     {
         "label": "write_compressed_file",
+        "importPath": "src.huffman.huffman_io",
+        "description": "src.huffman.huffman_io",
+        "isExtraImport": true,
+        "detail": "src.huffman.huffman_io",
+        "documentation": {}
+    },
+    {
+        "label": "process_file",
         "importPath": "src.utils.file_handler",
         "description": "src.utils.file_handler",
         "isExtraImport": true,
@@ -160,14 +201,6 @@
         "description": "src.utils.file_handler",
         "isExtraImport": true,
         "detail": "src.utils.file_handler",
-        "documentation": {}
-    },
-    {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
-        "isExtraImport": true,
-        "detail": "pathlib",
         "documentation": {}
     },
     {
@@ -177,6 +210,30 @@
         "importPath": "unittest",
         "description": "unittest",
         "detail": "unittest",
+        "documentation": {}
+    },
+    {
+        "label": "mock",
+        "importPath": "unittest",
+        "description": "unittest",
+        "isExtraImport": true,
+        "detail": "unittest",
+        "documentation": {}
+    },
+    {
+        "label": "assert_that",
+        "importPath": "hamcrest",
+        "description": "hamcrest",
+        "isExtraImport": true,
+        "detail": "hamcrest",
+        "documentation": {}
+    },
+    {
+        "label": "equal_to",
+        "importPath": "hamcrest",
+        "description": "hamcrest",
+        "isExtraImport": true,
+        "detail": "hamcrest",
         "documentation": {}
     },
     {
@@ -212,91 +269,11 @@
         "documentation": {}
     },
     {
-        "label": "given",
-        "importPath": "tests.infrastructure.givenpy",
-        "description": "tests.infrastructure.givenpy",
+        "label": "parameterized",
+        "importPath": "parameterized",
+        "description": "parameterized",
         "isExtraImport": true,
-        "detail": "tests.infrastructure.givenpy",
-        "documentation": {}
-    },
-    {
-        "label": "then",
-        "importPath": "tests.infrastructure.givenpy",
-        "description": "tests.infrastructure.givenpy",
-        "isExtraImport": true,
-        "detail": "tests.infrastructure.givenpy",
-        "documentation": {}
-    },
-    {
-        "label": "when",
-        "importPath": "tests.infrastructure.givenpy",
-        "description": "tests.infrastructure.givenpy",
-        "isExtraImport": true,
-        "detail": "tests.infrastructure.givenpy",
-        "documentation": {}
-    },
-    {
-        "label": "prepare_file_system",
-        "importPath": "tests.infrastructure.steps",
-        "description": "tests.infrastructure.steps",
-        "isExtraImport": true,
-        "detail": "tests.infrastructure.steps",
-        "documentation": {}
-    },
-    {
-        "label": "create_invalid_file",
-        "importPath": "tests.infrastructure.steps",
-        "description": "tests.infrastructure.steps",
-        "isExtraImport": true,
-        "detail": "tests.infrastructure.steps",
-        "documentation": {}
-    },
-    {
-        "label": "process_and_compress",
-        "importPath": "src.main_solution",
-        "description": "src.main_solution",
-        "isExtraImport": true,
-        "detail": "src.main_solution",
-        "documentation": {}
-    },
-    {
-        "label": "process_and_decompress",
-        "importPath": "src.main_solution",
-        "description": "src.main_solution",
-        "isExtraImport": true,
-        "detail": "src.main_solution",
-        "documentation": {}
-    },
-    {
-        "label": "process_and_compress",
-        "importPath": "src.main_solution",
-        "description": "src.main_solution",
-        "isExtraImport": true,
-        "detail": "src.main_solution",
-        "documentation": {}
-    },
-    {
-        "label": "process_and_decompress",
-        "importPath": "src.main_solution",
-        "description": "src.main_solution",
-        "isExtraImport": true,
-        "detail": "src.main_solution",
-        "documentation": {}
-    },
-    {
-        "label": "process_and_compress",
-        "importPath": "src.main_solution",
-        "description": "src.main_solution",
-        "isExtraImport": true,
-        "detail": "src.main_solution",
-        "documentation": {}
-    },
-    {
-        "label": "process_and_decompress",
-        "importPath": "src.main_solution",
-        "description": "src.main_solution",
-        "isExtraImport": true,
-        "detail": "src.main_solution",
+        "detail": "parameterized",
         "documentation": {}
     },
     {
@@ -309,6 +286,22 @@
         "documentation": {}
     },
     {
+        "label": "process_and_compress",
+        "importPath": "src.main_solution",
+        "description": "src.main_solution",
+        "isExtraImport": true,
+        "detail": "src.main_solution",
+        "documentation": {}
+    },
+    {
+        "label": "process_and_decompress",
+        "importPath": "src.main_solution",
+        "description": "src.main_solution",
+        "isExtraImport": true,
+        "detail": "src.main_solution",
+        "documentation": {}
+    },
+    {
         "label": "HuffmanTree",
         "kind": 6,
         "importPath": "src.huffman.huffman_coding_trees",
@@ -318,11 +311,29 @@
         "documentation": {}
     },
     {
+        "label": "write_compressed_file",
+        "kind": 2,
+        "importPath": "src.huffman.huffman_io",
+        "description": "src.huffman.huffman_io",
+        "peekOfCode": "def write_compressed_file(output_filename: str, huffman_tree: HuffmanTree, compressed_data: str) -> None:\n    \"\"\"\n    Writes the compressed file with a header containing the serialized Huffman tree.\n    Args:\n        output_filename (str): The output file name.\n        huffman_tree (HuffmanTree): The Huffman tree used for compression.\n        compressed_data (str): The compressed binary string.\n    \"\"\"\n    serialized_tree = huffman_tree.serialize_tree()\n    with open(output_filename, \"wb\") as file:",
+        "detail": "src.huffman.huffman_io",
+        "documentation": {}
+    },
+    {
+        "label": "read_compressed_file",
+        "kind": 2,
+        "importPath": "src.huffman.huffman_io",
+        "description": "src.huffman.huffman_io",
+        "peekOfCode": "def read_compressed_file(input_filename: str) -> tuple[HuffmanNode, str]:\n    \"\"\"\n    Reads the compressed file and extracts the Huffman tree and compressed data.\n    Args:\n        input_filename (str): The input file name.\n    Returns:\n        tuple[HuffmanNode, str]: A tuple containing the Huffman tree and the compressed binary string.\n    \"\"\"\n    with open(input_filename, \"rb\") as file:\n        serialized_tree = \"\"",
+        "detail": "src.huffman.huffman_io",
+        "documentation": {}
+    },
+    {
         "label": "HuffmanNode",
         "kind": 6,
         "importPath": "src.huffman.huffman_node",
         "description": "src.huffman.huffman_node",
-        "peekOfCode": "class HuffmanNode:\n    def __init__(self, weight: int, element: Optional[str] = None,\n                 left: Optional['HuffmanNode'] = None,\n                 right: Optional['HuffmanNode'] = None):\n        \"\"\"\n        Constructor for a Huffman node.\n        :param weight: The weight (frequency) of the node.\n        :param element: The character element for this node (None for internal nodes).\n        :param left: Left child node (None for leaf nodes).\n        :param right: Right child node (None for leaf nodes).",
+        "peekOfCode": "class HuffmanNode:\n    _counter = itertools.count()  # Unique sequence count\n    def __init__(self, weight: int, element: Optional[str] = None,\n                 left: Optional['HuffmanNode'] = None,\n                 right: Optional['HuffmanNode'] = None):\n        \"\"\"\n        Constructor for a Huffman node.\n        :param weight: The weight (frequency) of the node.\n        :param element: The character element for this node (None for internal nodes).\n        :param left: Left child node (None for leaf nodes).",
         "detail": "src.huffman.huffman_node",
         "documentation": {}
     },
@@ -345,29 +356,11 @@
         "documentation": {}
     },
     {
-        "label": "write_compressed_file",
-        "kind": 2,
-        "importPath": "src.utils.file_handler",
-        "description": "src.utils.file_handler",
-        "peekOfCode": "def write_compressed_file(output_filename: str, huffman_tree: HuffmanTree, compressed_data: str) -> None:\n    \"\"\"\n    Writes the compressed file with a header containing the serialized Huffman tree.\n    Args:\n        output_filename (str): The output file name.\n        huffman_tree (HuffmanTree): The Huffman tree used for compression.\n        compressed_data (str): The compressed binary string.\n    \"\"\"\n    serialized_tree = huffman_tree.serialize_tree()\n    with open(output_filename, \"wb\") as file:",
-        "detail": "src.utils.file_handler",
-        "documentation": {}
-    },
-    {
-        "label": "read_compressed_file",
-        "kind": 2,
-        "importPath": "src.utils.file_handler",
-        "description": "src.utils.file_handler",
-        "peekOfCode": "def read_compressed_file(input_filename: str) -> tuple[HuffmanNode, str]:\n    \"\"\"\n    Reads the compressed file and extracts the Huffman tree and compressed data.\n    Args:\n        input_filename (str): The input file name.\n    Returns:\n        tuple[HuffmanNode, str]: A tuple containing the Huffman tree and the compressed binary string.\n    \"\"\"\n    with open(input_filename, \"rb\") as file:\n        serialized_tree = \"\"",
-        "detail": "src.utils.file_handler",
-        "documentation": {}
-    },
-    {
         "label": "calculate_character_frequency",
         "kind": 2,
         "importPath": "src.utils.text_utils",
         "description": "src.utils.text_utils",
-        "peekOfCode": "def calculate_character_frequency(text: str) -> Dict[str,int]:\n    \"\"\"\n    Calculates the frequency of each character in the given text.\n    Args:\n        text (str): The input text.\n    Returns:\n        dict: A dictionary where keys are characters and values are their respective frequencies.\n    \"\"\"\n    return dict(Counter(text))",
+        "peekOfCode": "def calculate_character_frequency(text: str) -> Dict[str, int]:\n    \"\"\"\n    Calculates the frequency of each character in the given text.\n    Args:\n        text (str): The input text.\n    Returns:\n        dict: A dictionary where keys are characters and values are their respective frequencies.\n    Raises:\n        TypeError: If the input `text` is not a string.\n    \"\"\"",
         "detail": "src.utils.text_utils",
         "documentation": {}
     },
@@ -390,111 +383,21 @@
         "documentation": {}
     },
     {
-        "label": "Context",
+        "label": "TestHuffmanTree",
         "kind": 6,
-        "importPath": "tests.infrastructure.givenpy",
-        "description": "tests.infrastructure.givenpy",
-        "peekOfCode": "class Context:\n    def __getattribute__(self, name: str):\n        return object.__getattribute__(self, name)\nclass GivenScope:\n    def __init__(self, steps):\n        self.context = Context()\n        self.steps = steps or []\n        self.started_steps = []\n    def __enter__(self):\n        for step in self.steps:",
-        "detail": "tests.infrastructure.givenpy",
+        "importPath": "tests.huffman.test_huffman_tree",
+        "description": "tests.huffman.test_huffman_tree",
+        "peekOfCode": "class TestHuffmanTree(unittest.TestCase):\n    @parameterized.expand([\n        (\n            \"single_character\",\n            {\"a\": 5},\n            {\"a\": \"0\"},\n            \"L'a'\"\n        ),\n        (\n            \"two_characters\",",
+        "detail": "tests.huffman.test_huffman_tree",
         "documentation": {}
     },
     {
-        "label": "GivenScope",
-        "kind": 6,
-        "importPath": "tests.infrastructure.givenpy",
-        "description": "tests.infrastructure.givenpy",
-        "peekOfCode": "class GivenScope:\n    def __init__(self, steps):\n        self.context = Context()\n        self.steps = steps or []\n        self.started_steps = []\n    def __enter__(self):\n        for step in self.steps:\n            result = step(self.context)\n            self.started_steps.append(result)\n            if hasattr(result, '__enter__'):",
-        "detail": "tests.infrastructure.givenpy",
-        "documentation": {}
-    },
-    {
-        "label": "MockWith",
-        "kind": 6,
-        "importPath": "tests.infrastructure.givenpy",
-        "description": "tests.infrastructure.givenpy",
-        "peekOfCode": "class MockWith:\n    def __enter__(self):\n        pass\n    def __exit__(self, type, value, traceback):\n        pass\n    def __getattribute__(self, item):\n        return MockWith()\ndef given(steps=None):\n    return GivenScope(steps)\ndef then(message=None):",
-        "detail": "tests.infrastructure.givenpy",
-        "documentation": {}
-    },
-    {
-        "label": "given",
-        "kind": 2,
-        "importPath": "tests.infrastructure.givenpy",
-        "description": "tests.infrastructure.givenpy",
-        "peekOfCode": "def given(steps=None):\n    return GivenScope(steps)\ndef then(message=None):\n    return MockWith()\ndef when(description=None):\n    return MockWith()\ndef resulting(param=None):\n    return MockWith()",
-        "detail": "tests.infrastructure.givenpy",
-        "documentation": {}
-    },
-    {
-        "label": "then",
-        "kind": 2,
-        "importPath": "tests.infrastructure.givenpy",
-        "description": "tests.infrastructure.givenpy",
-        "peekOfCode": "def then(message=None):\n    return MockWith()\ndef when(description=None):\n    return MockWith()\ndef resulting(param=None):\n    return MockWith()",
-        "detail": "tests.infrastructure.givenpy",
-        "documentation": {}
-    },
-    {
-        "label": "when",
-        "kind": 2,
-        "importPath": "tests.infrastructure.givenpy",
-        "description": "tests.infrastructure.givenpy",
-        "peekOfCode": "def when(description=None):\n    return MockWith()\ndef resulting(param=None):\n    return MockWith()",
-        "detail": "tests.infrastructure.givenpy",
-        "documentation": {}
-    },
-    {
-        "label": "resulting",
-        "kind": 2,
-        "importPath": "tests.infrastructure.givenpy",
-        "description": "tests.infrastructure.givenpy",
-        "peekOfCode": "def resulting(param=None):\n    return MockWith()",
-        "detail": "tests.infrastructure.givenpy",
-        "documentation": {}
-    },
-    {
-        "label": "prepare_file_system",
-        "kind": 2,
-        "importPath": "tests.infrastructure.steps",
-        "description": "tests.infrastructure.steps",
-        "peekOfCode": "def prepare_file_system(valid_file_content=None, non_existent_file=False,\n                        directory_instead_of_file=False, unreadable_file=False):\n    \"\"\"\n    Step to set up file system states for testing.\n    \"\"\"\n    def step(context):\n        base_dir = Path(\"/tmp/test_process_file\")\n        base_dir.mkdir(parents=True, exist_ok=True)\n        if valid_file_content:\n            file_path = base_dir / \"valid_file.txt\"",
-        "detail": "tests.infrastructure.steps",
-        "documentation": {}
-    },
-    {
-        "label": "create_invalid_file",
-        "kind": 2,
-        "importPath": "tests.infrastructure.steps",
-        "description": "tests.infrastructure.steps",
-        "peekOfCode": "def create_invalid_file():\n    \"\"\"\n    Step to create a deliberately invalid file for testing.\n    \"\"\"\n    def step(context):\n        base_dir = Path(\"/tmp/test_process_file\")\n        base_dir.mkdir(parents=True, exist_ok=True)\n        file_path = base_dir / \"invalid_file.txt\"\n        file_path.touch()\n        context.file_path = str(file_path)",
-        "detail": "tests.infrastructure.steps",
-        "documentation": {}
-    },
-    {
-        "label": "ProcessFileTest",
+        "label": "TestProcessFile",
         "kind": 6,
         "importPath": "tests.utils.test_process_file",
         "description": "tests.utils.test_process_file",
-        "peekOfCode": "class ProcessFileTest(unittest.TestCase):\n    def test_that_valid_file_returns_content(self):\n        with given([\n            prepare_file_system(valid_file_content=\"Sample content\")\n        ]) as context:\n            file_path = cast(str, context.file_path)\n            with when():\n                content = process_file(file_path)\n            with then():\n                assert_that(content, equal_to(\"Sample content\"))",
+        "peekOfCode": "class TestProcessFile(unittest.TestCase):\n    def setUp(self):\n        \"\"\"\n        Set up a valid test file before each test.\n        \"\"\"\n        self.test_file = \"test_input.txt\"\n        with open(self.test_file, \"w\", encoding=\"utf-8\") as f:\n            f.write(\"Sample content\")\n    def tearDown(self):\n        \"\"\"",
         "detail": "tests.utils.test_process_file",
-        "documentation": {}
-    },
-    {
-        "label": "test_compression_tool",
-        "kind": 2,
-        "importPath": "tests.test_compression_tool",
-        "description": "tests.test_compression_tool",
-        "peekOfCode": "def test_compression_tool():\n    \"\"\"\n    Tests the compression tool by compressing and decompressing a file and verifying results.\n    \"\"\"\n    # File paths\n    input_filename = \"data/input.txt\"\n    compressed_filename = \"data/output.bin\"\n    decompressed_filename = \"data/decompressed.txt\"\n    # Ensure input file exists\n    if not os.path.isfile(input_filename):",
-        "detail": "tests.test_compression_tool",
-        "documentation": {}
-    },
-    {
-        "label": "test_compression_tool",
-        "kind": 2,
-        "importPath": "tests.test_tree",
-        "description": "tests.test_tree",
-        "peekOfCode": "def test_compression_tool(input_filename: str, compressed_filename: str, decompressed_filename: str) -> None:\n    \"\"\"\n    Tests the compression tool by compressing and decompressing a file and verifying results.\n    Args:\n        input_filename (str): Path to the input file.\n        compressed_filename (str): Path to the compressed output file.\n        decompressed_filename (str): Path to the decompressed output file.\n    \"\"\"\n    # Step 1: Compress the file\n    print(f\"Compressing '{input_filename}' into '{compressed_filename}'...\")",
-        "detail": "tests.test_tree",
         "documentation": {}
     },
     {

@@ -1,5 +1,6 @@
 from src.huffman.huffman_coding_trees import HuffmanTree
-from src.utils.file_handler import process_file, read_compressed_file, write_compressed_file
+from src.huffman.huffman_io import read_compressed_file, write_compressed_file
+from src.utils.file_handler import process_file
 
 
 def process_and_compress(input_filename: str, output_filename: str) -> None:

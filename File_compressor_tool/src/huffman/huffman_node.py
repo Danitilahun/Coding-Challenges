@@ -1,7 +1,10 @@
+# src/huffman/huffman_node.py
+import itertools
 from typing import Optional
 
-
 class HuffmanNode:
+    _counter = itertools.count()  # Unique sequence count
+
     def __init__(self, weight: int, element: Optional[str] = None,
                  left: Optional['HuffmanNode'] = None,
                  right: Optional['HuffmanNode'] = None):
@@ -14,8 +17,9 @@ class HuffmanNode:
         """
         self.weight: int = weight
         self.element: Optional[str] = element
-        self.left: Optional[HuffmanNode] = left
-        self.right: Optional[HuffmanNode] = right
+        self.left: Optional['HuffmanNode'] = left
+        self.right: Optional['HuffmanNode'] = right
+        self.order = next(HuffmanNode._counter) 
 
     def is_leaf(self) -> bool:
         """
@@ -30,4 +34,6 @@ class HuffmanNode:
         :param other: Another HuffmanNode to compare against.
         :return: True if this node's weight is less than the other node's weight.
         """
-        return self.weight < other.weight
+        if self.weight != other.weight:
+            return self.weight < other.weight
+        return self.order < other.order

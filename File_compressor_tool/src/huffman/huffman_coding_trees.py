@@ -1,7 +1,7 @@
+# src/huffman/huffman_coding_trees.py
 import heapq
 from typing import Dict, Optional
 from src.huffman.huffman_node import HuffmanNode
-
 
 class HuffmanTree:
     def __init__(self, frequencies: Dict[str, int]):
@@ -16,20 +16,24 @@ class HuffmanTree:
         """
         Build the Huffman tree using the provided frequencies.
         :return: None
+        :raises ValueError: If any frequency is non-positive.
         """
-        # Priority queue (min-heap) to store Huffman nodes
         priority_queue: list[HuffmanNode] = []
 
         for char, freq in self.frequencies.items():
+            if freq <= 0:
+                raise ValueError(f"Invalid frequency for character '{char}': {freq}. Must be positive.")
             heapq.heappush(priority_queue, HuffmanNode(freq, char))
+
+        if not priority_queue:
+            self.root = None
+            return
 
         while len(priority_queue) > 1:
             left: HuffmanNode = heapq.heappop(priority_queue)
             right: HuffmanNode = heapq.heappop(priority_queue)
 
-            merged = HuffmanNode(left.weight + right.weight,
-                                 left=left, right=right)
-
+            merged = HuffmanNode(left.weight + right.weight, left=left, right=right)
             heapq.heappush(priority_queue, merged)
 
         self.root = heapq.heappop(priority_queue)
@@ -48,16 +52,19 @@ class HuffmanTree:
         if node is None:
             node = self.root
 
+        if node is None:
+            return {}
+
         code_table = {}
 
         if node.is_leaf():
-            code_table[node.element] = prefix
+            # Assign '0' if there's only one character to ensure it's encoded
+            code_table[node.element] = prefix or "0"
         else:
-
-            code_table.update(self.generate_prefix_code_table(
-                node.left, prefix + "0"))
-            code_table.update(self.generate_prefix_code_table(
-                node.right, prefix + "1"))
+            if node.left:
+                code_table.update(self.generate_prefix_code_table(node.left, prefix + "0"))
+            if node.right:
+                code_table.update(self.generate_prefix_code_table(node.right, prefix + "1"))
 
         return code_table
 
@@ -74,9 +81,10 @@ class HuffmanTree:
         if node is None:
             node = self.root
 
+        if node is None:
+            return ""
+
         if node.is_leaf():
             return f"L{repr(node.element)}"
         else:
             return f"I{self.serialize_tree(node.left)}{self.serialize_tree(node.right)}"
-        
-    

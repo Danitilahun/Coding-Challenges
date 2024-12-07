@@ -1,71 +1,86 @@
+import os
 import unittest
-from typing import cast
+from unittest import mock
 from hamcrest import assert_that, equal_to, calling, raises
-from tests.infrastructure.givenpy import given, then, when
-from tests.infrastructure.steps import (
-    prepare_file_system,
-    create_invalid_file,
-)
 from src.utils.file_handler import process_file
 
+class TestProcessFile(unittest.TestCase):
+    def setUp(self):
+        """
+        Set up a valid test file before each test.
+        """
+        self.test_file = "test_input.txt"
+        with open(self.test_file, "w", encoding="utf-8") as f:
+            f.write("Sample content")
 
-class ProcessFileTest(unittest.TestCase):
-    def test_that_valid_file_returns_content(self):
-        with given([
-            prepare_file_system(valid_file_content="Sample content")
-        ]) as context:
-            file_path = cast(str, context.file_path)
+    def tearDown(self):
+        """
+        Clean up test files after each test.
+        """
+        if os.path.exists(self.test_file):
+            os.remove(self.test_file)
 
-            with when():
-                content = process_file(file_path)
+        if os.path.exists("test_output.huf"):
+            os.remove("test_output.huf")
 
-            with then():
-                assert_that(content, equal_to("Sample content"))
+    def test_process_file_valid(self):
+        """
+        Test that process_file correctly reads and returns the content of a valid file.
+        """
+        content = process_file(self.test_file)
+        assert_that(content, equal_to("Sample content"))
 
-    def test_that_non_existent_file_raises_file_not_found_error(self):
-        with given([
-            prepare_file_system(non_existent_file=True)
-        ]) as context:
-            file_path = cast(str, context.file_path)
+    def test_process_file_nonexistent(self):
+        """
+        Test that process_file raises FileNotFoundError when the file does not exist.
+        """
+        nonexistent_file = "no_such_file.txt"
+        assert_that(
+            calling(process_file).with_args(nonexistent_file),
+            raises(FileNotFoundError, f"Error: File '{nonexistent_file}' does not exist.")
+        )
 
-            with when():
-                action = calling(process_file).with_args(file_path)
+    def test_process_file_directory(self):
+        """
+        Test that process_file raises IsADirectoryError when a directory path is provided instead of a file.
+        """
+        directory_path = "."
+        assert_that(
+            calling(process_file).with_args(directory_path),
+            raises(IsADirectoryError, f"Error: '{directory_path}' is not a valid file.")
+        )
 
-            with then():
-                assert_that(action, raises(FileNotFoundError))
+    def test_process_file_unicode_decode_error(self):
+        """
+        Test that process_file raises UnicodeDecodeError when the file contains undecodable characters.
+        """
+        # Create a file with invalid UTF-8 bytes
+        invalid_utf8_file = "invalid_utf8.txt"
+        with open(invalid_utf8_file, "wb") as f:
+            f.write(b'\xff\xfe\xfa')  # Invalid UTF-8 bytes
 
-    def test_that_directory_instead_of_file_raises_is_a_directory_error(self):
-        with given([
-            prepare_file_system(directory_instead_of_file=True)
-        ]) as context:
-            file_path = cast(str, context.file_path)
+        try:
+            assert_that(
+                calling(process_file).with_args(invalid_utf8_file),
+                raises(
+                    UnicodeDecodeError,
+                    f"Error: Unable to decode the file '{invalid_utf8_file}'."
+                )
+            )
+        finally:
+            if os.path.exists(invalid_utf8_file):
+                os.remove(invalid_utf8_file)
 
-            with when():
-                action = calling(process_file).with_args(file_path)
+    @mock.patch("builtins.open", side_effect=IOError("Permission denied"))
+    def test_process_file_io_error(self, mock_open):
+        """
+        Test that process_file raises IOError when the file cannot be opened.
+        """
+        filename = self.test_file
+        assert_that(
+            calling(process_file).with_args(filename),
+            raises(IOError, f"Error: Unable to open the file '{filename}'. Details: Permission denied")
+        )
 
-            with then():
-                assert_that(action, raises(IsADirectoryError))
-
-    def test_that_unreadable_file_raises_io_error(self):
-        with given([
-            prepare_file_system(unreadable_file=True)
-        ]) as context:
-            file_path = cast(str, context.file_path)
-
-            with when():
-                action = calling(process_file).with_args(file_path)
-
-            with then():
-                assert_that(action, raises(IOError))
-
-    def test_that_unicode_error_raises_unicode_decode_error(self):
-        with given([
-            prepare_file_system(invalid_file_content="\x9d")
-        ]) as context:
-            file_path = cast(str, context.file_path)
-
-            with when():
-                action = calling(process_file).with_args(file_path)
-
-            with then():
-                assert_that(action, raises(UnicodeDecodeError))
+if __name__ == "__main__":
+    unittest.main()
