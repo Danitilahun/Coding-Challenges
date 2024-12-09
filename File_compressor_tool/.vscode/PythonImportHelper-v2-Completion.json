@@ -1,160 +1,5 @@
 [
     {
-        "label": "heapq",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "heapq",
-        "description": "heapq",
-        "detail": "heapq",
-        "documentation": {}
-    },
-    {
-        "label": "Dict",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Optional",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Optional",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Tuple",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Dict",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "HuffmanNode",
-        "importPath": "src.huffman.huffman_node",
-        "description": "src.huffman.huffman_node",
-        "isExtraImport": true,
-        "detail": "src.huffman.huffman_node",
-        "documentation": {}
-    },
-    {
-        "label": "HuffmanNode",
-        "importPath": "src.huffman.huffman_node",
-        "description": "src.huffman.huffman_node",
-        "isExtraImport": true,
-        "detail": "src.huffman.huffman_node",
-        "documentation": {}
-    },
-    {
-        "label": "HuffmanNode",
-        "importPath": "src.huffman.huffman_node",
-        "description": "src.huffman.huffman_node",
-        "isExtraImport": true,
-        "detail": "src.huffman.huffman_node",
-        "documentation": {}
-    },
-    {
-        "label": "HuffmanNode",
-        "importPath": "src.huffman.huffman_node",
-        "description": "src.huffman.huffman_node",
-        "isExtraImport": true,
-        "detail": "src.huffman.huffman_node",
-        "documentation": {}
-    },
-    {
-        "label": "HuffmanNode",
-        "importPath": "src.huffman.huffman_node",
-        "description": "src.huffman.huffman_node",
-        "isExtraImport": true,
-        "detail": "src.huffman.huffman_node",
-        "documentation": {}
-    },
-    {
-        "label": "HuffmanTree",
-        "importPath": "src.huffman.huffman_coding_trees",
-        "description": "src.huffman.huffman_coding_trees",
-        "isExtraImport": true,
-        "detail": "src.huffman.huffman_coding_trees",
-        "documentation": {}
-    },
-    {
-        "label": "HuffmanTree",
-        "importPath": "src.huffman.huffman_coding_trees",
-        "description": "src.huffman.huffman_coding_trees",
-        "isExtraImport": true,
-        "detail": "src.huffman.huffman_coding_trees",
-        "documentation": {}
-    },
-    {
-        "label": "HuffmanTree",
-        "importPath": "src.huffman.huffman_coding_trees",
-        "description": "src.huffman.huffman_coding_trees",
-        "isExtraImport": true,
-        "detail": "src.huffman.huffman_coding_trees",
-        "documentation": {}
-    },
-    {
-        "label": "HuffmanTree",
-        "importPath": "src.huffman.huffman_coding_trees",
-        "description": "src.huffman.huffman_coding_trees",
-        "isExtraImport": true,
-        "detail": "src.huffman.huffman_coding_trees",
-        "documentation": {}
-    },
-    {
-        "label": "deserialize_tree",
-        "importPath": "src.huffman.tree_deserialization",
-        "description": "src.huffman.tree_deserialization",
-        "isExtraImport": true,
-        "detail": "src.huffman.tree_deserialization",
-        "documentation": {}
-    },
-    {
-        "label": "deserialize_tree",
-        "importPath": "src.huffman.tree_deserialization",
-        "description": "src.huffman.tree_deserialization",
-        "isExtraImport": true,
-        "detail": "src.huffman.tree_deserialization",
-        "documentation": {}
-    },
-    {
-        "label": "itertools",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "itertools",
-        "description": "itertools",
-        "detail": "itertools",
-        "documentation": {}
-    },
-    {
-        "label": "ast",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "ast",
-        "description": "ast",
-        "detail": "ast",
-        "documentation": {}
-    },
-    {
         "label": "os",
         "kind": 6,
         "isExtraImport": true,
@@ -164,116 +9,117 @@
         "documentation": {}
     },
     {
-        "label": "Counter",
-        "importPath": "collections",
-        "description": "collections",
-        "isExtraImport": true,
-        "detail": "collections",
-        "documentation": {}
-    },
-    {
-        "label": "read_compressed_file",
-        "importPath": "src.huffman.huffman_io",
-        "description": "src.huffman.huffman_io",
-        "isExtraImport": true,
-        "detail": "src.huffman.huffman_io",
-        "documentation": {}
-    },
-    {
-        "label": "write_compressed_file",
-        "importPath": "src.huffman.huffman_io",
-        "description": "src.huffman.huffman_io",
-        "isExtraImport": true,
-        "detail": "src.huffman.huffman_io",
-        "documentation": {}
-    },
-    {
-        "label": "process_file",
-        "importPath": "src.utils.file_handler",
-        "description": "src.utils.file_handler",
-        "isExtraImport": true,
-        "detail": "src.utils.file_handler",
-        "documentation": {}
-    },
-    {
-        "label": "process_file",
-        "importPath": "src.utils.file_handler",
-        "description": "src.utils.file_handler",
-        "isExtraImport": true,
-        "detail": "src.utils.file_handler",
-        "documentation": {}
-    },
-    {
-        "label": "unittest",
+        "label": "struct",
         "kind": 6,
         "isExtraImport": true,
-        "importPath": "unittest",
-        "description": "unittest",
-        "detail": "unittest",
+        "importPath": "struct",
+        "description": "struct",
+        "detail": "struct",
         "documentation": {}
     },
     {
-        "label": "mock",
-        "importPath": "unittest",
-        "description": "unittest",
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
         "isExtraImport": true,
-        "detail": "unittest",
+        "detail": "typing",
         "documentation": {}
     },
     {
-        "label": "assert_that",
-        "importPath": "hamcrest",
-        "description": "hamcrest",
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
         "isExtraImport": true,
-        "detail": "hamcrest",
+        "detail": "typing",
         "documentation": {}
     },
     {
-        "label": "equal_to",
-        "importPath": "hamcrest",
-        "description": "hamcrest",
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
         "isExtraImport": true,
-        "detail": "hamcrest",
+        "detail": "typing",
         "documentation": {}
     },
     {
-        "label": "assert_that",
-        "importPath": "hamcrest",
-        "description": "hamcrest",
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
         "isExtraImport": true,
-        "detail": "hamcrest",
+        "detail": "typing",
         "documentation": {}
     },
     {
-        "label": "equal_to",
-        "importPath": "hamcrest",
-        "description": "hamcrest",
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
         "isExtraImport": true,
-        "detail": "hamcrest",
+        "detail": "typing",
         "documentation": {}
     },
     {
-        "label": "calling",
-        "importPath": "hamcrest",
-        "description": "hamcrest",
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
         "isExtraImport": true,
-        "detail": "hamcrest",
+        "detail": "typing",
         "documentation": {}
     },
     {
-        "label": "raises",
-        "importPath": "hamcrest",
-        "description": "hamcrest",
+        "label": "HuffmanTree",
+        "importPath": "src.huffman.huffman_trees",
+        "description": "src.huffman.huffman_trees",
         "isExtraImport": true,
-        "detail": "hamcrest",
+        "detail": "src.huffman.huffman_trees",
         "documentation": {}
     },
     {
-        "label": "parameterized",
-        "importPath": "parameterized",
-        "description": "parameterized",
+        "label": "HuffmanTree",
+        "importPath": "src.huffman.huffman_trees",
+        "description": "src.huffman.huffman_trees",
         "isExtraImport": true,
-        "detail": "parameterized",
+        "detail": "src.huffman.huffman_trees",
+        "documentation": {}
+    },
+    {
+        "label": "HuffmanTree",
+        "importPath": "src.huffman.huffman_trees",
+        "description": "src.huffman.huffman_trees",
+        "isExtraImport": true,
+        "detail": "src.huffman.huffman_trees",
+        "documentation": {}
+    },
+    {
+        "label": "CompressionUtils",
+        "importPath": "src.utils.compression_utils",
+        "description": "src.utils.compression_utils",
+        "isExtraImport": true,
+        "detail": "src.utils.compression_utils",
+        "documentation": {}
+    },
+    {
+        "label": "DecompressionUtils",
+        "importPath": "src.utils.decompression_utils",
+        "description": "src.utils.decompression_utils",
+        "isExtraImport": true,
+        "detail": "src.utils.decompression_utils",
+        "documentation": {}
+    },
+    {
+        "label": "heapq",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "heapq",
+        "description": "heapq",
+        "detail": "heapq",
+        "documentation": {}
+    },
+    {
+        "label": "HuffmanNode",
+        "importPath": "src.huffman.huffman_node",
+        "description": "src.huffman.huffman_node",
+        "isExtraImport": true,
+        "detail": "src.huffman.huffman_node",
         "documentation": {}
     },
     {
@@ -286,46 +132,29 @@
         "documentation": {}
     },
     {
-        "label": "process_and_compress",
-        "importPath": "src.main_solution",
-        "description": "src.main_solution",
-        "isExtraImport": true,
-        "detail": "src.main_solution",
-        "documentation": {}
-    },
-    {
-        "label": "process_and_decompress",
-        "importPath": "src.main_solution",
-        "description": "src.main_solution",
-        "isExtraImport": true,
-        "detail": "src.main_solution",
-        "documentation": {}
-    },
-    {
-        "label": "HuffmanTree",
+        "label": "argparse",
         "kind": 6,
-        "importPath": "src.huffman.huffman_coding_trees",
-        "description": "src.huffman.huffman_coding_trees",
-        "peekOfCode": "class HuffmanTree:\n    def __init__(self, frequencies: Dict[str, int]):\n        \"\"\"\n        Initialize the Huffman tree with a frequency dictionary.\n        :param frequencies: A dictionary with characters as keys and their frequencies as values.\n        \"\"\"\n        self.frequencies: Dict[str, int] = frequencies\n        self.root: Optional[HuffmanNode] = None\n    def build_tree(self) -> None:\n        \"\"\"",
-        "detail": "src.huffman.huffman_coding_trees",
+        "isExtraImport": true,
+        "importPath": "argparse",
+        "description": "argparse",
+        "detail": "argparse",
         "documentation": {}
     },
     {
-        "label": "write_compressed_file",
-        "kind": 2,
-        "importPath": "src.huffman.huffman_io",
-        "description": "src.huffman.huffman_io",
-        "peekOfCode": "def write_compressed_file(output_filename: str, huffman_tree: HuffmanTree, compressed_data: str) -> None:\n    \"\"\"\n    Writes the compressed file with a header containing the serialized Huffman tree.\n    Args:\n        output_filename (str): The output file name.\n        huffman_tree (HuffmanTree): The Huffman tree used for compression.\n        compressed_data (str): The compressed binary string.\n    \"\"\"\n    serialized_tree = huffman_tree.serialize_tree()\n    with open(output_filename, \"wb\") as file:",
-        "detail": "src.huffman.huffman_io",
+        "label": "HuffmanCoding",
+        "importPath": "src.huffman.huffman_coding",
+        "description": "src.huffman.huffman_coding",
+        "isExtraImport": true,
+        "detail": "src.huffman.huffman_coding",
         "documentation": {}
     },
     {
-        "label": "read_compressed_file",
-        "kind": 2,
-        "importPath": "src.huffman.huffman_io",
-        "description": "src.huffman.huffman_io",
-        "peekOfCode": "def read_compressed_file(input_filename: str) -> tuple[HuffmanNode, str]:\n    \"\"\"\n    Reads the compressed file and extracts the Huffman tree and compressed data.\n    Args:\n        input_filename (str): The input file name.\n    Returns:\n        tuple[HuffmanNode, str]: A tuple containing the Huffman tree and the compressed binary string.\n    \"\"\"\n    with open(input_filename, \"rb\") as file:\n        serialized_tree = \"\"",
-        "detail": "src.huffman.huffman_io",
+        "label": "HuffmanCoding",
+        "kind": 6,
+        "importPath": "src.huffman.huffman_coding",
+        "description": "src.huffman.huffman_coding",
+        "peekOfCode": "class HuffmanCoding:\n    \"\"\"\n    Handles the compression and decompression processes using Huffman Coding.\n    Attributes:\n        file_path (str): The path to the file to compress or decompress.\n        tree (Optional[HuffmanTree]): The HuffmanTree instance used for encoding/decoding.\n    \"\"\"\n    def __init__(self, file_path: str):\n        \"\"\"\n        Initializes the HuffmanCoding instance with the specified file path.",
+        "detail": "src.huffman.huffman_coding",
         "documentation": {}
     },
     {
@@ -333,71 +162,35 @@
         "kind": 6,
         "importPath": "src.huffman.huffman_node",
         "description": "src.huffman.huffman_node",
-        "peekOfCode": "class HuffmanNode:\n    _counter = itertools.count()  # Unique sequence count\n    def __init__(self, weight: int, element: Optional[str] = None,\n                 left: Optional['HuffmanNode'] = None,\n                 right: Optional['HuffmanNode'] = None):\n        \"\"\"\n        Constructor for a Huffman node.\n        :param weight: The weight (frequency) of the node.\n        :param element: The character element for this node (None for internal nodes).\n        :param left: Left child node (None for leaf nodes).",
+        "peekOfCode": "class HuffmanNode:\n    \"\"\"\n    Represents a node in the Huffman Tree.\n    Attributes:\n        weight (int): The frequency of the character or the sum of frequencies for internal nodes.\n        element (Optional[str]): The character this node represents (None for internal nodes).\n        left (Optional[HuffmanNode]): The left child node.\n        right (Optional[HuffmanNode]): The right child node.\n    \"\"\"\n    def __init__(",
         "detail": "src.huffman.huffman_node",
         "documentation": {}
     },
     {
-        "label": "deserialize_tree",
-        "kind": 2,
-        "importPath": "src.huffman.tree_deserialization",
-        "description": "src.huffman.tree_deserialization",
-        "peekOfCode": "def deserialize_tree(serialized_str: str) -> HuffmanNode:\n    \"\"\"\n    Deserialize a Huffman tree from the given serialized string.\n    The format is:\n    - 'I' for internal nodes followed by the serialization of left and right subtrees.\n    - 'L' for leaf nodes followed by repr(node.element).\n    Args:\n        serialized_str (str): The serialized string of the Huffman tree.\n    Returns:\n        HuffmanNode: The root of the deserialized Huffman tree.",
-        "detail": "src.huffman.tree_deserialization",
-        "documentation": {}
-    },
-    {
-        "label": "process_file",
-        "kind": 2,
-        "importPath": "src.utils.file_handler",
-        "description": "src.utils.file_handler",
-        "peekOfCode": "def process_file(filename: str) -> str:\n    \"\"\"\n    Processes the input file. If invalid, raises appropriate exceptions.\n    Args:\n        filename (str): The name of the file to be processed.\n    Returns:\n        str: The content of the file.\n    Raises:\n        FileNotFoundError: If the file does not exist.\n        IsADirectoryError: If the filename points to a directory instead of a file.",
-        "detail": "src.utils.file_handler",
-        "documentation": {}
-    },
-    {
-        "label": "calculate_character_frequency",
-        "kind": 2,
-        "importPath": "src.utils.text_utils",
-        "description": "src.utils.text_utils",
-        "peekOfCode": "def calculate_character_frequency(text: str) -> Dict[str, int]:\n    \"\"\"\n    Calculates the frequency of each character in the given text.\n    Args:\n        text (str): The input text.\n    Returns:\n        dict: A dictionary where keys are characters and values are their respective frequencies.\n    Raises:\n        TypeError: If the input `text` is not a string.\n    \"\"\"",
-        "detail": "src.utils.text_utils",
-        "documentation": {}
-    },
-    {
-        "label": "process_and_compress",
-        "kind": 2,
-        "importPath": "src.main_solution",
-        "description": "src.main_solution",
-        "peekOfCode": "def process_and_compress(input_filename: str, output_filename: str) -> None:\n    \"\"\"\n    Compresses the input file using Huffman coding and writes the compressed file.\n    Args:\n        input_filename (str): Path to the input file.\n        output_filename (str): Path to the compressed output file.\n    \"\"\"\n    content = process_file(input_filename)\n    frequency_table = {}\n    for char in content:",
-        "detail": "src.main_solution",
-        "documentation": {}
-    },
-    {
-        "label": "process_and_decompress",
-        "kind": 2,
-        "importPath": "src.main_solution",
-        "description": "src.main_solution",
-        "peekOfCode": "def process_and_decompress(input_filename: str, output_filename: str) -> None:\n    \"\"\"\n    Decompresses a compressed file using Huffman coding and writes the decompressed content.\n    Args:\n        input_filename (str): Path to the compressed input file.\n        output_filename (str): Path to the decompressed output file.\n    \"\"\"\n    huffman_tree_root, compressed_data = read_compressed_file(input_filename)\n    decompressed_content = []\n    node = huffman_tree_root",
-        "detail": "src.main_solution",
-        "documentation": {}
-    },
-    {
-        "label": "TestHuffmanTree",
+        "label": "HuffmanTree",
         "kind": 6,
-        "importPath": "tests.huffman.test_huffman_tree",
-        "description": "tests.huffman.test_huffman_tree",
-        "peekOfCode": "class TestHuffmanTree(unittest.TestCase):\n    @parameterized.expand([\n        (\n            \"single_character\",\n            {\"a\": 5},\n            {\"a\": \"0\"},\n            \"L'a'\"\n        ),\n        (\n            \"two_characters\",",
-        "detail": "tests.huffman.test_huffman_tree",
+        "importPath": "src.huffman.huffman_trees",
+        "description": "src.huffman.huffman_trees",
+        "peekOfCode": "class HuffmanTree:\n    \"\"\"\n    Represents the Huffman Tree used for encoding and decoding.\n    Attributes:\n        frequencies (Dict[str, int]): Mapping of characters to their frequencies.\n        root (Optional[HuffmanNode]): The root node of the Huffman Tree.\n        code_table (Dict[str, str]): Mapping of characters to their Huffman codes.\n        reverse_code_table (Dict[str, str]): Mapping of Huffman codes to their characters.\n    \"\"\"\n    def __init__(self, frequencies: Dict[str, int]):",
+        "detail": "src.huffman.huffman_trees",
         "documentation": {}
     },
     {
-        "label": "TestProcessFile",
+        "label": "CompressionUtils",
         "kind": 6,
-        "importPath": "tests.utils.test_process_file",
-        "description": "tests.utils.test_process_file",
-        "peekOfCode": "class TestProcessFile(unittest.TestCase):\n    def setUp(self):\n        \"\"\"\n        Set up a valid test file before each test.\n        \"\"\"\n        self.test_file = \"test_input.txt\"\n        with open(self.test_file, \"w\", encoding=\"utf-8\") as f:\n            f.write(\"Sample content\")\n    def tearDown(self):\n        \"\"\"",
-        "detail": "tests.utils.test_process_file",
+        "importPath": "src.utils.compression_utils",
+        "description": "src.utils.compression_utils",
+        "peekOfCode": "class CompressionUtils:\n    \"\"\"\n    Utility class containing methods related to the compression process in Huffman Coding.\n    \"\"\"\n    @staticmethod\n    def create_frequency_dict(text: str) -> Dict[str, int]:\n        \"\"\"\n        Creates a frequency dictionary mapping each character in the text to its frequency.\n        Args:\n            text (str): The input text for which the frequency map is to be created.",
+        "detail": "src.utils.compression_utils",
+        "documentation": {}
+    },
+    {
+        "label": "DecompressionUtils",
+        "kind": 6,
+        "importPath": "src.utils.decompression_utils",
+        "description": "src.utils.decompression_utils",
+        "peekOfCode": "class DecompressionUtils:\n    \"\"\"\n    Utility class containing methods related to the decompression process in Huffman Coding.\n    \"\"\"\n    @staticmethod\n    def remove_padding(padded_encoded_text: str) -> str:\n        \"\"\"\n        Removes the padding from the encoded text.\n        Args:\n            padded_encoded_text (str): The padded binary string.",
+        "detail": "src.utils.decompression_utils",
         "documentation": {}
     },
     {
@@ -405,7 +198,7 @@
         "kind": 2,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "def main():\n    if len(sys.argv) < 4:\n        print(\"Usage: python main.py <compress|decompress> <input_filename> <output_filename>\")\n        sys.exit(1)\n    action = sys.argv[1]\n    input_filename = sys.argv[2]\n    output_filename = sys.argv[3]\n    if not os.path.isfile(input_filename):\n        print(f\"Error: The file '{input_filename}' does not exist.\")\n        sys.exit(1)",
+        "peekOfCode": "def main():\n    \"\"\"\n    The main function that parses command-line arguments and performs compression or decompression.\n    \"\"\"\n    parser = argparse.ArgumentParser(description=\"Huffman Coding Compression and Decompression Tool\")\n    subparsers = parser.add_subparsers(dest='action', help='Action to perform')\n    # Parser for compression\n    compress_parser = subparsers.add_parser('compress', help='Compress a file')\n    compress_parser.add_argument('input_filename', type=str, help='Path to the input file to compress')\n    compress_parser.add_argument('output_filename', type=str, help='Path to save the compressed file')",
         "detail": "main",
         "documentation": {}
     }
