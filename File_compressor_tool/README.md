@@ -109,10 +109,17 @@ The image below shows an example of the file sizes before and after compression 
 - **Compressed File Size**: 1,812 KB
 - **Decompressed File Size**: 3,291 KB (Matches original, proving lossless compression)
 
-**Compression Efficiency**:
 
-- **Compression Ratio**: \( \frac{\text{Compressed Size}}{\text{Original Size}} = \frac{1,812}{3,291} \approx 55.05\% \)
-- **Space Saved**: \( 100\% - 55.05\% = 44.95\% \)
+#### Efficiency Metrics:
+- **Compression Ratio**:  
+  \[
+  \text{Compression Ratio} = \frac{\text{Compressed Size}}{\text{Original Size}} = \frac{1,812}{3,291} \approx 55.05\%
+  \]
+
+- **Space Saved**:  
+  \[
+  \text{Space Saved} = 100\% - 55.05\% = 44.95\%
+  \]
 
 ## References
 
