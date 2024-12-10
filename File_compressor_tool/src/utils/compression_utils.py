@@ -28,6 +28,7 @@ class CompressionUtils:
 
     @staticmethod
     def encode_text(text: str, code_table: Dict[str, str]) -> str:
+        
         """
         Encodes the input text using the provided Huffman codes.
 
@@ -38,6 +39,7 @@ class CompressionUtils:
         Returns:
             str: The encoded text as a binary string.
         """
+        
         return ''.join(code_table[char] for char in text)
 
     @staticmethod
@@ -55,7 +57,7 @@ class CompressionUtils:
         """
         extra_padding = 8 - len(encoded_text) % 8
         if extra_padding == 8:
-            extra_padding = 0  # No padding needed
+            extra_padding = 0
 
         padded_encoded_text = encoded_text + "0" * extra_padding
         padded_info = f"{extra_padding:08b}"

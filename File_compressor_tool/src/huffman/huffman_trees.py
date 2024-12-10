@@ -118,9 +118,9 @@ class HuffmanTree:
         for char, freq in self.frequencies.items():
             char_bytes = char.encode('utf-8')
             char_length = len(char_bytes)
-            serialized_data.extend(struct.pack('>H', char_length))  # 2 bytes for the length of the character
-            serialized_data.extend(char_bytes)                      # character bytes
-            serialized_data.extend(struct.pack('>I', freq))        # 4 bytes for frequency
+            serialized_data.extend(struct.pack('>H', char_length))
+            serialized_data.extend(char_bytes)                    
+            serialized_data.extend(struct.pack('>I', freq))       
 
         return bytes(serialized_data)
 

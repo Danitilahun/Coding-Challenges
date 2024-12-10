@@ -22,9 +22,9 @@ class DecompressionUtils:
         padded_info = padded_encoded_text[:8]
         extra_padding = int(padded_info, 2)
 
-        encoded_text = padded_encoded_text[8:]  # Remove the padding info
+        encoded_text = padded_encoded_text[8:]
         if extra_padding > 0:
-            encoded_text = encoded_text[:-extra_padding]  # Remove the padding bits
+            encoded_text = encoded_text[:-extra_padding]
         return encoded_text
 
     @staticmethod

@@ -12,12 +12,10 @@ def main():
     parser = argparse.ArgumentParser(description="Huffman Coding Compression and Decompression Tool")
     subparsers = parser.add_subparsers(dest='action', help='Action to perform')
 
-    # Parser for compression
     compress_parser = subparsers.add_parser('compress', help='Compress a file')
     compress_parser.add_argument('input_filename', type=str, help='Path to the input file to compress')
     compress_parser.add_argument('output_filename', type=str, help='Path to save the compressed file')
 
-    # Parser for decompression
     decompress_parser = subparsers.add_parser('decompress', help='Decompress a file')
     decompress_parser.add_argument('input_filename', type=str, help='Path to the compressed file to decompress')
     decompress_parser.add_argument('output_filename', type=str, help='Path to save the decompressed file')

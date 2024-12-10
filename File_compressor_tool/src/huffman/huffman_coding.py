@@ -44,32 +44,28 @@ class HuffmanCoding:
 
         frequency = CompressionUtils.create_frequency_dict(text)
 
-        # Build Huffman Tree
         self.tree = HuffmanTree(frequencies=frequency)
         self.tree.build_tree()
         self.tree.generate_code_tables()
 
-        # Encode text
         encoded_text = CompressionUtils.encode_text(text, self.tree.get_code_table())
 
-        # Pad encoded text
         padded_encoded_text = CompressionUtils.pad_encoded_text(encoded_text)
 
-        # Convert to byte array
         byte_array = CompressionUtils.get_byte_array(padded_encoded_text)
 
-        # Serialize frequency map
         serialized_frequency = CompressionUtils.serialize_frequency_map(frequency)
 
         with open(output_path, 'wb') as output:
-            # Write the length of the frequency map first (4 bytes)
+            
             output.write(struct.pack('>I', len(serialized_frequency)))
-            # Write the frequency map
+            
             output.write(serialized_frequency)
-            # Write the encoded byte array
+            
             output.write(bytes(byte_array))
-
+            
         print(f"Compressed '{self.file_path}' to '{output_path}'")
+        
         return output_path
 
     def decompress(self, input_path: str, output_path: str) -> str:
@@ -87,34 +83,30 @@ class HuffmanCoding:
             str: The path to the decompressed text file.
         """
         with open(input_path, 'rb') as file:
-            # Read the length of the frequency map first (4 bytes)
+            
             frequency_map_size_bytes = file.read(4)
             if len(frequency_map_size_bytes) < 4:
                 raise ValueError("Invalid compressed file format.")
 
             frequency_map_size = struct.unpack('>I', frequency_map_size_bytes)[0]
 
-            # Read the frequency map
             serialized_frequency = file.read(frequency_map_size)
             frequency_map = DecompressionUtils.deserialize_frequency_map(serialized_frequency)
 
-            # Rebuild the Huffman Tree
             self.tree = HuffmanTree(frequencies=frequency_map)
             self.tree.build_tree()
             self.tree.generate_code_tables()
 
-            # Read the rest of the file as the encoded byte array
             byte_array = file.read()
             padded_encoded_text = ''.join(f"{byte:08b}" for byte in byte_array)
 
-            # Remove padding
             encoded_text = DecompressionUtils.remove_padding(padded_encoded_text)
 
-            # Decode text
             decoded_text = DecompressionUtils.decode_text(encoded_text, self.tree.get_reverse_code_table())
 
         with open(output_path, 'w', encoding='utf-8') as output:
             output.write(decoded_text)
 
         print(f"Decompressed '{input_path}' to '{output_path}'")
+        
         return output_path
