@@ -128,11 +128,4 @@ The image below shows an example of the file sizes before and after compression 
 
 _Feel free to explore these resources to deepen your understanding of Huffman Coding and its applications._
 
-
-## Conclusion
-
-This **README.md** provides a clear and comprehensive overview of your Huffman Coding File Compression Tool, guiding users through understanding the algorithm, installing and using the tool, and contributing to the project. By including references to educational videos, you offer additional resources for users to deepen their understanding of Huffman Coding.
-
-Feel free to modify and expand upon this template to better suit the specific details and features of your project.
-
 Happy Coding!
