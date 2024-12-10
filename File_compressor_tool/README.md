@@ -1,4 +1,3 @@
-````markdown
 # Huffman Coding File Compression Tool
 
 ## Table of Contents
@@ -55,7 +54,6 @@ Huffman Coding is a widely-used algorithm for lossless data compression. It work
 git clone https://github.com/Danitilahun/Coding-Challenges.git
 cd File_compressor_tool
 ```
-````
 
 ## Usage
 
@@ -135,5 +133,3 @@ This **README.md** provides a clear and comprehensive overview of your Huffman C
 Feel free to modify and expand upon this template to better suit the specific details and features of your project.
 
 Happy Coding!
-
-````
