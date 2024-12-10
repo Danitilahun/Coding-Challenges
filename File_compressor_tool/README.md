@@ -112,14 +112,10 @@ The image below shows an example of the file sizes before and after compression 
 
 #### Efficiency Metrics:
 - **Compression Ratio**:  
-  \[
-  \text{Compression Ratio} = \frac{\text{Compressed Size}}{\text{Original Size}} = \frac{1,812}{3,291} \approx 55.05\%
-  \]
+  Compression Ratio = (Compressed Size / Original Size) = (1,812 / 3,291) ≈ 55.05%
 
 - **Space Saved**:  
-  \[
-  \text{Space Saved} = 100\% - 55.05\% = 44.95\%
-  \]
+  Space Saved = 100% - 55.05% = 44.95%
 
 ## References
 
