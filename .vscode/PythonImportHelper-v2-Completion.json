@@ -18,12 +18,134 @@
         "documentation": {}
     },
     {
+        "label": "struct",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "struct",
+        "description": "struct",
+        "detail": "struct",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "HuffmanTree",
+        "importPath": "src.huffman.huffman_trees",
+        "description": "src.huffman.huffman_trees",
+        "isExtraImport": true,
+        "detail": "src.huffman.huffman_trees",
+        "documentation": {}
+    },
+    {
+        "label": "HuffmanTree",
+        "importPath": "src.huffman.huffman_trees",
+        "description": "src.huffman.huffman_trees",
+        "isExtraImport": true,
+        "detail": "src.huffman.huffman_trees",
+        "documentation": {}
+    },
+    {
+        "label": "HuffmanTree",
+        "importPath": "src.huffman.huffman_trees",
+        "description": "src.huffman.huffman_trees",
+        "isExtraImport": true,
+        "detail": "src.huffman.huffman_trees",
+        "documentation": {}
+    },
+    {
+        "label": "CompressionUtils",
+        "importPath": "src.utils.compression_utils",
+        "description": "src.utils.compression_utils",
+        "isExtraImport": true,
+        "detail": "src.utils.compression_utils",
+        "documentation": {}
+    },
+    {
+        "label": "DecompressionUtils",
+        "importPath": "src.utils.decompression_utils",
+        "description": "src.utils.decompression_utils",
+        "isExtraImport": true,
+        "detail": "src.utils.decompression_utils",
+        "documentation": {}
+    },
+    {
+        "label": "heapq",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "heapq",
+        "description": "heapq",
+        "detail": "heapq",
+        "documentation": {}
+    },
+    {
+        "label": "HuffmanNode",
+        "importPath": "src.huffman.huffman_node",
+        "description": "src.huffman.huffman_node",
+        "isExtraImport": true,
+        "detail": "src.huffman.huffman_node",
+        "documentation": {}
+    },
+    {
         "label": "sys",
         "kind": 6,
         "isExtraImport": true,
         "importPath": "sys",
         "description": "sys",
         "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "HuffmanCoding",
+        "importPath": "src.huffman.huffman_coding",
+        "description": "src.huffman.huffman_coding",
+        "isExtraImport": true,
+        "detail": "src.huffman.huffman_coding",
         "documentation": {}
     },
     {
@@ -145,6 +267,60 @@
         "description": "command-line-app.todo",
         "peekOfCode": "TASK_FILE = os.path.expanduser(\"~/.tasks.txt\")\ndef create_parser():\n    parser = argparse.ArgumentParser(description=\"Command-line Todo List App\")\n    parser.add_argument(\"-a\", \"--add\", metavar=\"\", help=\"Add a new task\")\n    parser.add_argument(\"-l\", \"--list\", action=\"store_true\", help=\"List all tasks\")\n    parser.add_argument(\"-r\", \"--remove\", metavar=\"\", help=\"Remove a task by index\")\n    return parser\ndef add_task(task):\n    with open(TASK_FILE, \"a\") as file:\n        file.write(task + \"\\n\")",
         "detail": "command-line-app.todo",
+        "documentation": {}
+    },
+    {
+        "label": "HuffmanCoding",
+        "kind": 6,
+        "importPath": "File_compressor_tool.src.huffman.huffman_coding",
+        "description": "File_compressor_tool.src.huffman.huffman_coding",
+        "peekOfCode": "class HuffmanCoding:\n    \"\"\"\n    Handles the compression and decompression processes using Huffman Coding.\n    Attributes:\n        file_path (str): The path to the file to compress or decompress.\n        tree (Optional[HuffmanTree]): The HuffmanTree instance used for encoding/decoding.\n    \"\"\"\n    def __init__(self, file_path: str):\n        \"\"\"\n        Initializes the HuffmanCoding instance with the specified file path.",
+        "detail": "File_compressor_tool.src.huffman.huffman_coding",
+        "documentation": {}
+    },
+    {
+        "label": "HuffmanNode",
+        "kind": 6,
+        "importPath": "File_compressor_tool.src.huffman.huffman_node",
+        "description": "File_compressor_tool.src.huffman.huffman_node",
+        "peekOfCode": "class HuffmanNode:\n    \"\"\"\n    Represents a node in the Huffman Tree.\n    Attributes:\n        weight (int): The frequency of the character or the sum of frequencies for internal nodes.\n        element (Optional[str]): The character this node represents (None for internal nodes).\n        left (Optional[HuffmanNode]): The left child node.\n        right (Optional[HuffmanNode]): The right child node.\n    \"\"\"\n    def __init__(",
+        "detail": "File_compressor_tool.src.huffman.huffman_node",
+        "documentation": {}
+    },
+    {
+        "label": "HuffmanTree",
+        "kind": 6,
+        "importPath": "File_compressor_tool.src.huffman.huffman_trees",
+        "description": "File_compressor_tool.src.huffman.huffman_trees",
+        "peekOfCode": "class HuffmanTree:\n    \"\"\"\n    Represents the Huffman Tree used for encoding and decoding.\n    Attributes:\n        frequencies (Dict[str, int]): Mapping of characters to their frequencies.\n        root (Optional[HuffmanNode]): The root node of the Huffman Tree.\n        code_table (Dict[str, str]): Mapping of characters to their Huffman codes.\n        reverse_code_table (Dict[str, str]): Mapping of Huffman codes to their characters.\n    \"\"\"\n    def __init__(self, frequencies: Dict[str, int]):",
+        "detail": "File_compressor_tool.src.huffman.huffman_trees",
+        "documentation": {}
+    },
+    {
+        "label": "CompressionUtils",
+        "kind": 6,
+        "importPath": "File_compressor_tool.src.utils.compression_utils",
+        "description": "File_compressor_tool.src.utils.compression_utils",
+        "peekOfCode": "class CompressionUtils:\n    \"\"\"\n    Utility class containing methods related to the compression process in Huffman Coding.\n    \"\"\"\n    @staticmethod\n    def create_frequency_dict(text: str) -> Dict[str, int]:\n        \"\"\"\n        Creates a frequency dictionary mapping each character in the text to its frequency.\n        Args:\n            text (str): The input text for which the frequency map is to be created.",
+        "detail": "File_compressor_tool.src.utils.compression_utils",
+        "documentation": {}
+    },
+    {
+        "label": "DecompressionUtils",
+        "kind": 6,
+        "importPath": "File_compressor_tool.src.utils.decompression_utils",
+        "description": "File_compressor_tool.src.utils.decompression_utils",
+        "peekOfCode": "class DecompressionUtils:\n    \"\"\"\n    Utility class containing methods related to the decompression process in Huffman Coding.\n    \"\"\"\n    @staticmethod\n    def remove_padding(padded_encoded_text: str) -> str:\n        \"\"\"\n        Removes the padding from the encoded text.\n        Args:\n            padded_encoded_text (str): The padded binary string.",
+        "detail": "File_compressor_tool.src.utils.decompression_utils",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "File_compressor_tool.main",
+        "description": "File_compressor_tool.main",
+        "peekOfCode": "def main():\n    \"\"\"\n    The main function that parses command-line arguments and performs compression or decompression.\n    \"\"\"\n    parser = argparse.ArgumentParser(description=\"Huffman Coding Compression and Decompression Tool\")\n    subparsers = parser.add_subparsers(dest='action', help='Action to perform')\n    compress_parser = subparsers.add_parser('compress', help='Compress a file')\n    compress_parser.add_argument('input_filename', type=str, help='Path to the input file to compress')\n    compress_parser.add_argument('output_filename', type=str, help='Path to save the compressed file')\n    decompress_parser = subparsers.add_parser('decompress', help='Decompress a file')",
+        "detail": "File_compressor_tool.main",
         "documentation": {}
     },
     {
