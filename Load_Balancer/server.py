@@ -1,7 +1,7 @@
 import socket
-import sys
 from time import sleep
 import argparse
+from typing import Tuple
 
 
 class SimpleHTTPServer:
@@ -11,7 +11,7 @@ class SimpleHTTPServer:
     simulate a basic backend service.
     """
 
-    def __init__(self, host: str, port: int):
+    def __init__(self, host: str, port: int) -> None:
         """
         Initialize the server with a host and port.
 
@@ -19,10 +19,10 @@ class SimpleHTTPServer:
             host (str): The hostname or IP address the server binds to.
             port (int): The port number on which the server listens for incoming connections.
         """
-        self.host = host
-        self.port = port
+        self.host: str = host
+        self.port: int = port
 
-    def start(self):
+    def start(self) -> None:
         """
         Start the server to listen for incoming connections. This is a blocking call
         that will keep the server running indefinitely, processing one connection
@@ -33,62 +33,52 @@ class SimpleHTTPServer:
         """
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server_socket:
             try:
-               
                 server_socket.bind((self.host, self.port))
-                
-                # Start listening for incoming connections (maximum of 5 queued connections)
                 server_socket.listen(5)
-                
                 print(f"[Server]: Listening on {self.host}:{self.port}...")
 
-                
                 while True:
                     client_connection, client_address = server_socket.accept()
                     self._handle_connection(client_connection, client_address)
 
             except Exception as error:
                 print(f"[Server]: Error occurred: {error}")
-           
-    def _handle_connection(self, client_connection, client_address):
+
+    def _handle_connection(self, client_connection: socket.socket, client_address: Tuple[str, int]) -> None:
         """
         Handle an individual client connection. Receives data from the client,
         processes it, and sends back an HTTP response.
 
         Args:
-            client_connection (socket): The socket object representing the client connection.
-            client_address (tuple): The address (IP and port) of the connected client.
+            client_connection (socket.socket): The socket object representing the client connection.
+            client_address (Tuple[str, int]): The address (IP and port) of the connected client.
         """
         with client_connection:
             print(f"[Server]: Connected to {client_address}")
             try:
-                
-                request_data = client_connection.recv(1024).decode('utf-8')
+                request_data: str = client_connection.recv(1024).decode('utf-8')
                 if not request_data:
-                    # If no data is received, terminate handling for this connection
                     return
 
                 print(f"[Server]: Received data from {client_address}")
 
-              
-                response_body = f"[Server]: Hello from Backend Server ({self.host}:{self.port})"
-                http_response = (
+                response_body: str = f"[Server]: Hello from Backend Server ({self.host}:{self.port})"
+                http_response: str = (
                     f"HTTP/1.1 200 OK\r\n"
                     f"Content-Length: {len(response_body)}\r\n"
                     f"\r\n"
                     f"{response_body}"
                 )
 
-                
                 sleep(10)
 
                 client_connection.send(http_response.encode())
 
             except Exception as error:
                 print(f"[Server]: Error handling connection: {error}")
-           
 
 
-def parse_arguments():
+def parse_arguments() -> argparse.Namespace:
     """
     Parse command-line arguments to configure the server.
 
@@ -108,9 +98,6 @@ def parse_arguments():
 
 
 if __name__ == "__main__":
-   
-    args = parse_arguments()
-
-    server = SimpleHTTPServer(host=args.host, port=args.port)
-
+    args: argparse.Namespace = parse_arguments()
+    server: SimpleHTTPServer = SimpleHTTPServer(host=args.host, port=args.port)
     server.start()
