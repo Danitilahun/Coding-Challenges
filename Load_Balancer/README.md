@@ -1,4 +1,3 @@
-```markdown
 # Load Balancer with Simple HTTP Servers
 
 This project implements a **Load Balancer** with **Simple HTTP Servers**, demonstrating key principles of load balancing, threading, and distributed system design. The system uses a **Round Robin** algorithm to distribute requests, dynamically monitors server health, and ensures high availability.
@@ -94,6 +93,8 @@ Multithreading ensures that critical operations like health checks, client-serve
 | **Health Checks**              | Monitor server health without interrupting other load balancer operations.  |
 | **Bidirectional Communication**| Handle simultaneous data flow between clients and backend servers.          |
 | **Concurrent Request Handling**| Serve multiple clients concurrently, ensuring high availability and scalability. |
+
+---
 
 ## Installation
 
