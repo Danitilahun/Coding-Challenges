@@ -1,7 +1,7 @@
 
 import argparse
 
-from simple_http_server.simple_http_server import SimpleHTTPServer
+from src.simple_http_server.simple_http_server import SimpleHTTPServer
 
 def parse_arguments() -> argparse.Namespace:
     """

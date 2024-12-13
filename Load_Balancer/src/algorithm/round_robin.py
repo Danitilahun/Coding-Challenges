@@ -1,6 +1,6 @@
 from typing import List
 
-from backend.backend_server import BackendServer
+from src.backend.backend_server import BackendServer
 
 class RoundRobin:
     """

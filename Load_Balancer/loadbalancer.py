@@ -1,5 +1,6 @@
 import argparse
-from load_balancer.load_balancer import LoadBalancer
+
+from src.load_balancer.load_balancer import LoadBalancer
 
 def parse_arguments() -> argparse.Namespace:
     """

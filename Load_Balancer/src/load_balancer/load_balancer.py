@@ -1,10 +1,10 @@
 import socket
 from threading import Thread
 from typing import List
-from algorithm.round_robin import RoundRobin
-from backend.backend_server import BackendServer
-from healthcheck.health_check import Healthcheck, start_health_check
-from server_db.server_db import server_info
+from src.algorithm.round_robin import RoundRobin
+from src.backend.backend_server import BackendServer
+from src.healthcheck.health_check import Healthcheck, start_health_check
+from src.server_db.server_db import server_info
 
 
 class LoadBalancer:

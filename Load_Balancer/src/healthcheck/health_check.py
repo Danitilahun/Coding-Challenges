@@ -3,8 +3,7 @@ import requests
 import time
 from threading import Thread
 
-from backend.backend_server import BackendServer
-
+from src.backend.backend_server import BackendServer
 
 class Healthcheck:
     """
