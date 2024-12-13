@@ -3,21 +3,23 @@ import requests
 import time
 from threading import Thread
 
+from backend.backend_server import BackendServer
+
 
 class Healthcheck:
     """
     Performs periodic health checks on a backend server to monitor its availability.
     """
 
-    def __init__(self, server, check_period: int) -> None:
+    def __init__(self, server: BackendServer, check_period: int) -> None:
         """
         Initialize the Healthcheck instance.
 
         Args:
-            server: The server instance to monitor.
+            server (BackendServer): The backend server instance to monitor.
             check_period (int): The interval (in seconds) between health checks.
         """
-        self.server = server
+        self.server: BackendServer = server
         self.check_period: int = check_period
         self.health_check_url: str = f"http://{self.server.host}:{self.server.port}/health"
         self.is_healthy: bool = True
@@ -33,24 +35,21 @@ class Healthcheck:
                 response = requests.get(self.health_check_url)
                 if response.status_code == 200:
                     if not self.is_healthy:
-                        print(f"[Healthcheck]: Server {self.server.id} is now healthy. Adding it back to available servers.")
+                        print(f"[Healthcheck]: Server {self.server.server_id} is now healthy. Adding it back to available servers.")
                         self.server.is_up = True
                         self.is_healthy = True
                 else:
-                   
                     if self.is_healthy:
-                        print(f"[Healthcheck]: Server {self.server.id} returned status {response.status_code}. Marking it as unhealthy.")
+                        print(f"[Healthcheck]: Server {self.server.server_id} returned status {response.status_code}. Marking it as unhealthy.")
                         self.server.is_up = False
                         self.is_healthy = False
             except requests.ConnectionError:
-               
                 if self.is_healthy:
-                    print(f"[Healthcheck]: Server {self.server.id} is not reachable. Marking it as down.")
+                    print(f"[Healthcheck]: Server {self.server.server_id} is not reachable. Marking it as down.")
                     self.server.is_up = False
                     self.is_healthy = False
             except Exception as error:
-               
-                print(f"[Healthcheck]: Unexpected error during health check for server {self.server.id}: {error}")
+                print(f"[Healthcheck]: Unexpected error during health check for server {self.server.server_id}: {error}")
                 self.server.is_up = False
                 self.is_healthy = False
 
