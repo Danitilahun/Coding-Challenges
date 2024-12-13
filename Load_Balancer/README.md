@@ -95,8 +95,6 @@ Multithreading ensures that critical operations like health checks, client-serve
 | **Bidirectional Communication**| Handle simultaneous data flow between clients and backend servers.          |
 | **Concurrent Request Handling**| Serve multiple clients concurrently, ensuring high availability and scalability. |
 
----
-
 ## Installation
 
 ### 1. Clone the Repository
