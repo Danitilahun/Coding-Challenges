@@ -1,4 +1,4 @@
-# Load Balancer with Simple HTTP Servers
+# Load Balancer
 
 This project implements a **Load Balancer** with **Simple HTTP Servers**, demonstrating key principles of load balancing, threading, and distributed system design. The system uses a **Round Robin** algorithm to distribute requests, dynamically monitors server health, and ensures high availability.
 
