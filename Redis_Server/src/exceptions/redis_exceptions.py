@@ -48,3 +48,9 @@ class CommandProcessingException(RedisServerException):
     Raised when an error occurs while processing a valid Redis command.
     """
     pass
+
+class RespSerializationError(RedisServerException):
+    """
+    Raised when serialization of data into RESP format fails.
+    """
+    pass
