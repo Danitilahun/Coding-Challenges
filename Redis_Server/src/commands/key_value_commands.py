@@ -5,7 +5,9 @@ This module implements key-value commands for the Redis server:
 - DELETE: Delete one or more keys.
 - EXISTS: Check the existence of one or more keys.
 - INCR: Increment the integer value of a key.
+- INCRBY: Increment the integer value of a key by a specific amount.
 - DECR: Decrement the integer value of a key.
+- DECRBY: Decrement the integer value of a key by a specific amount.
 
 Utility functions handle expiration checks and increment operations.
 """
@@ -216,5 +218,31 @@ class DecrCommand(RedisCommand):
         key = self.get("key")
 
         new_value = increment_value(REDIS_DB.get(key, [None, None])[0], -1)
+        REDIS_DB.set(key, (new_value, None))
+        return new_value
+
+
+class IncrByCommand(RedisCommand):
+    """Implementation of INCRBY command."""
+    REQUIRED_ATTRIBUTES = ["key", "increment"]
+
+    def execute(self) -> int:
+        self._parse_arguments()
+        key, increment = self.get("key"), int(self.get("increment"))
+        new_value = increment_value(
+            REDIS_DB.get(key, [None, None])[0], increment)
+        REDIS_DB.set(key, (new_value, None))
+        return new_value
+
+
+class DecrByCommand(RedisCommand):
+    """Implementation of DECRBY command."""
+    REQUIRED_ATTRIBUTES = ["key", "decrement"]
+
+    def execute(self) -> int:
+        self._parse_arguments()
+        key, decrement = self.get("key"), int(self.get("decrement"))
+        new_value = increment_value(
+            REDIS_DB.get(key, [None, None])[0], -decrement)
         REDIS_DB.set(key, (new_value, None))
         return new_value

@@ -1,7 +1,9 @@
 import unittest
 from unittest.mock import patch
 from src.commands.key_value_commands import (
+    DecrByCommand,
     GetCommand,
+    IncrByCommand,
     SetCommand,
     DeleteCommand,
     ExistsCommand,
@@ -23,7 +25,8 @@ class TestKeyValueCommands(unittest.TestCase):
         self.mock_db = RedisDB("test_snapshot.pkl")
         self.mock_db._data = {}
 
-        patcher = patch("src.commands.key_value_commands.REDIS_DB", self.mock_db)
+        patcher = patch(
+            "src.commands.key_value_commands.REDIS_DB", self.mock_db)
         self.addCleanup(patcher.stop)
         patcher.start()
 
@@ -114,6 +117,40 @@ class TestKeyValueCommands(unittest.TestCase):
         """Test DecrCommand decrements an existing key."""
         self.mock_db.set("counter", ("5", None))
         command = DecrCommand(["counter"])
+        result = command.execute()
+
+        self.assertEqual(result, 4)
+        self.assertEqual(self.mock_db.get("counter")[0], 4)
+        
+    def test_incrby_command_new_key(self):
+        """Test IncrByCommand increments a new key by a specific amount."""
+        command = IncrByCommand(["counter", "5"])
+        result = command.execute()
+
+        self.assertEqual(result, 5)
+        self.assertEqual(self.mock_db.get("counter")[0], 5)
+
+    def test_incrby_command_existing_key(self):
+        """Test IncrByCommand increments an existing key by a specific amount."""
+        self.mock_db.set("counter", ("10", None))
+        command = IncrByCommand(["counter", "7"])
+        result = command.execute()
+
+        self.assertEqual(result, 17)
+        self.assertEqual(self.mock_db.get("counter")[0], 17)
+
+    def test_decrby_command_new_key(self):
+        """Test DecrByCommand decrements a new key by a specific amount."""
+        command = DecrByCommand(["counter", "4"])
+        result = command.execute()
+
+        self.assertEqual(result, -4)
+        self.assertEqual(self.mock_db.get("counter")[0], -4)
+
+    def test_decrby_command_existing_key(self):
+        """Test DecrByCommand decrements an existing key by a specific amount."""
+        self.mock_db.set("counter", ("10", None))
+        command = DecrByCommand(["counter", "6"])
         result = command.execute()
 
         self.assertEqual(result, 4)
