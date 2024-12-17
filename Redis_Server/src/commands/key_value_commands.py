@@ -113,6 +113,15 @@ class DeleteCommand(RedisCommand):
     DELETE removes one or more keys.
     """
 
+    REQUIRED_ATTRIBUTES = ()
+    POSSIBLE_OPTIONS = ()
+
+    def _parse_arguments(self) -> None:
+        """
+        Overrides base argument parsing to skip validation.
+        """
+        pass
+
     def execute(self) -> int:
         """
         Executes the DELETE command.
@@ -134,6 +143,15 @@ class ExistsCommand(RedisCommand):
 
     EXISTS checks the existence of one or more keys.
     """
+
+    REQUIRED_ATTRIBUTES = ()
+    POSSIBLE_OPTIONS = ()
+
+    def _parse_arguments(self) -> None:
+        """
+        Overrides base argument parsing to skip validation.
+        """
+        pass
 
     def execute(self) -> int:
         """
@@ -176,6 +194,7 @@ class IncrCommand(RedisCommand):
         new_value = increment_value(REDIS_DB.get(key, [None, None])[0], 1)
         REDIS_DB.set(key, (new_value, None))
         return new_value
+
 
 class DecrCommand(RedisCommand):
     """
