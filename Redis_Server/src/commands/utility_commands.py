@@ -5,7 +5,7 @@ This module implements utility Redis commands:
 - SAVE: Persist the in-memory database to a snapshot file.
 """
 
-from commands.base_command import RedisCommand
+from src.commands.base_command import RedisCommand
 from src.redisDB.redis_db import REDIS_DB
 
 
@@ -15,6 +15,15 @@ class PingCommand(RedisCommand):
 
     The PING command is used to test the connection to the Redis server.
     """
+
+    REQUIRED_ATTRIBUTES = ()
+    POSSIBLE_OPTIONS = ()
+
+    def _parse_arguments(self) -> None:
+        """
+        Overrides base argument parsing to skip validation.
+        """
+        pass
 
     def execute(self) -> str:
         """
@@ -33,6 +42,15 @@ class EchoCommand(RedisCommand):
     The ECHO command returns the input arguments back to the client.
     """
 
+    REQUIRED_ATTRIBUTES = ()
+    POSSIBLE_OPTIONS = ()
+
+    def _parse_arguments(self) -> None:
+        """
+        Overrides base argument parsing to skip validation.
+        """
+        pass
+
     def execute(self) -> str:
         """
         Executes the ECHO command.
@@ -49,6 +67,15 @@ class SaveCommand(RedisCommand):
 
     The SAVE command saves the current in-memory database to a snapshot file.
     """
+
+    REQUIRED_ATTRIBUTES = ()
+    POSSIBLE_OPTIONS = ()
+
+    def _parse_arguments(self) -> None:
+        """
+        Overrides base argument parsing to skip validation.
+        """
+        pass
 
     def execute(self) -> str:
         """

@@ -10,7 +10,8 @@ It provides:
 from abc import ABC, abstractmethod
 from typing import Any, List, Dict, Tuple
 
-from exceptions.redis_exceptions import InvalidCommandSyntaxError
+from src.exceptions.redis_exceptions import InvalidCommandSyntaxError
+
 
 
 class RedisCommand(ABC):
