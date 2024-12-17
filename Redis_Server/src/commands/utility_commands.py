@@ -60,36 +60,6 @@ class EchoCommand(RedisCommand):
         """
         return " ".join(self._arguments)
 
-
-class ClientCommand(RedisCommand):
-
-    REQUIRED_ATTRIBUTES = ()
-    POSSIBLE_OPTIONS = ()
-
-    def _parse_arguments(self) -> None:
-        """
-        Overrides base argument parsing to skip validation.
-        """
-        pass
-
-    def execute(self) -> str:
-        return ["OK"]
-
-
-class CommandCommand(RedisCommand):
-    REQUIRED_ATTRIBUTES = ()
-    POSSIBLE_OPTIONS = ()
-
-    def _parse_arguments(self) -> None:
-        """
-        Overrides base argument parsing to skip validation.
-        """
-        pass
-
-    def execute(self) -> str:
-        return ["OK"]
-
-
 class SaveCommand(RedisCommand):
     """
     Implements the SAVE command.

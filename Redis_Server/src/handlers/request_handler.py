@@ -35,8 +35,9 @@ def _handle_request(data: bytes) -> list:
     Raises:
         RedisServerException: If an error occurs during command execution.
     """
+    fixed_data = data.decode('utf-8').replace('\\r\\n', '\r\n').encode('utf-8')
 
-    command, *arguments = RespDeserializer(data=data).deserialize()
+    command, *arguments = RespDeserializer(data=fixed_data).deserialize()
 
     command_handler = get_command_handler(command)
 

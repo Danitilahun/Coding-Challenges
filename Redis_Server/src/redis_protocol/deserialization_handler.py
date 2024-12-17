@@ -32,10 +32,19 @@ class RespDeserializer:
     def _readline(self) -> bytes:
         """
         Reads a single RESP line from the buffer, ensuring it ends with CRLF.
+        Raises:
+            RespParsingError: If incomplete RESP data is detected.
         """
         data = self._buffer.readline()
-        while not data.endswith(CRLF):
-            data += self._readline()
+        if not data:
+            raise RespParsingError(
+                "Unexpected end of input while reading line")
+
+        if not data.endswith(CRLF):
+            remaining_data = self._buffer.readline()
+            if not remaining_data:
+                raise RespParsingError("Incomplete RESP data")
+            data += remaining_data
         return data
 
     def _decode(self, data: bytes) -> str:
@@ -53,13 +62,6 @@ class RespDeserializer:
     def deserialize(self) -> Any:
         """
         Deserializes RESP data into a Python object.
-
-        Returns:
-            Any: The deserialized Python object (e.g., str, int, list, None).
-
-        Raises:
-            RespParsingError: If parsing fails for any reason.
-            RespProtocolError: If an unsupported RESP type is encountered.
         """
 
         def parse_simple_string() -> str:
@@ -78,7 +80,12 @@ class RespDeserializer:
             return self._decode(self._buffer.read(length + len(CRLF)))
 
         def parse_array() -> list[Any]:
-            length = int(self._decode(self._readline()))
+            length_line = self._readline()
+            try:
+                length = int(self._decode(length_line))
+            except ValueError as ve:
+                raise RespParsingError(f"Invalid array length: {length_line}") from ve
+            
             if length == -1:
                 return None
             return [self.deserialize() for _ in range(length)]
@@ -96,5 +103,8 @@ class RespDeserializer:
             if resp_type == b"*":
                 return parse_array()
         except Exception as e:
-            raise RespParsingError(f"Failed to parse RESP data: {resp_type}") from e
+            raise RespParsingError(
+                f"Failed to parse RESP data starting with: {resp_type} - {e}"
+            ) from e
         raise RespProtocolError(f"Unsupported RESP type: {resp_type}")
+

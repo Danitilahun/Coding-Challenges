@@ -19,10 +19,6 @@ from src.utils.argument_parser import parse_arguments
 
 logger = logging.getLogger(__name__)
 
-args = parse_arguments()
-HOST = args.host
-PORT = args.port
-
 
 def handle_client(connection):
     """
@@ -48,7 +44,7 @@ def handle_client(connection):
                 break
 
 
-def start_server():
+def start_server(host, port):
     """
     Starts the Redis-like server to listen for incoming client connections.
 
@@ -60,10 +56,10 @@ def start_server():
 
             lsock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
-            lsock.bind((HOST, PORT))
+            lsock.bind((host, port))
             lsock.listen()
 
-            logger.info(f"Server started. Listening on {HOST}:{PORT}...")
+            logger.info(f"Server started. Listening on {host}:{port}...")
 
             while True:
                 client_socket, address = lsock.accept()
@@ -81,10 +77,14 @@ def start_server():
 
 
 if __name__ == "__main__":
+    
+    args = parse_arguments()
+    HOST = args.host
+    PORT = args.port
 
     logging.basicConfig(
         level=logging.INFO,
         format="%(asctime)s - %(levelname)s - %(message)s"
     )
 
-    start_server()
+    start_server(HOST, PORT)

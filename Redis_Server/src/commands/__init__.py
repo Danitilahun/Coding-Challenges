@@ -23,8 +23,6 @@ from src.commands.key_value_commands import (
 )
 from src.commands.list_commands import LPushCommand, RPushCommand
 from src.commands.utility_commands import (
-    ClientCommand,
-    CommandCommand,
     EchoCommand,
     PingCommand,
     SaveCommand,
@@ -36,8 +34,6 @@ COMMAND_MAP = {
     "ECHO": EchoCommand,
     "GET": GetCommand,
     "SET": SetCommand,
-    "CLIENT": ClientCommand,
-    "COMMAND": CommandCommand,
     "EXISTS": ExistsCommand,
     "DEL": DeleteCommand,
     "INCRBY": IncrByCommand,
