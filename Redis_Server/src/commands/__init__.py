@@ -65,7 +65,7 @@ def get_command_handler(command: str) -> RedisCommand:
         RedisCommand: The corresponding command handler class.
 
     Raises:
-        UnknownCommandException: If the command is not supported.
+        UnknownCommandException: If the command is None, empty, or not supported.
 
     Example:
         >>> handler = get_command_handler("PING")
@@ -73,6 +73,10 @@ def get_command_handler(command: str) -> RedisCommand:
         >>> command_instance.execute()
         'PONG'
     """
+    if not command or not isinstance(command, str):
+        raise UnknownCommandException(
+            "ERR Unsupported command `None` or invalid input")
+
     command_cls = COMMAND_MAP.get(command.upper())
     if not command_cls:
         raise UnknownCommandException(f"ERR Unsupported command `{command}`")
