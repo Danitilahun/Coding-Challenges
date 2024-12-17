@@ -47,27 +47,15 @@ def process_request(request: bytes) -> bytes:
     """
     Process a Redis-like client request and return a serialized response.
 
-    This function handles the end-to-end process:
-    - Parse the RESP-encoded request.
-    - Identify and execute the appropriate Redis command.
-    - Serialize the response back into RESP format.
-
     Args:
         request (bytes): The raw RESP-encoded request data from the client.
 
     Returns:
         bytes: The RESP-encoded response data.
-
-    Notes:
-        - Logs Redis-related exceptions for easier debugging.
-        - Errors are serialized back to the client as RESP error responses.
     """
     try:
-
         response = _handle_request(request)
+        return RespSerializer().serialize(response, use_bulk=True)
     except RedisServerException as exc:
-
         logger.exception("Redis exception - %s", exc)
-        return RespSerializer().serialize([exc], is_error=True)
-
-    return RespSerializer().serialize(response)
+        return RespSerializer().serialize(str(exc), is_error=True)

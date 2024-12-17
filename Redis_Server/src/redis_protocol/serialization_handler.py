@@ -82,16 +82,11 @@ class RespSerializer:
         if data is None:
             return f"$-1{CRLF_STR}"
         if isinstance(data, str):
-            return (
-                f"${len(data)}{CRLF_STR}{data}{CRLF_STR}"
-                if use_bulk
-                else f"+{data}{CRLF_STR}"
-            )
+            return f"+{data}{CRLF_STR}" if not use_bulk else f"${len(data)}{CRLF_STR}{data}{CRLF_STR}"
         if isinstance(data, int):
             return f":{data}{CRLF_STR}"
         if isinstance(data, (list, tuple)):
-            elements = [self._serialize(item, use_bulk, False)
-                        for item in data]
+            elements = [self._serialize(item, use_bulk, False) for item in data]
             return f"*{len(data)}{CRLF_STR}" + "".join(elements)
-        raise RespSerializationError(
-            f"Unsupported RESP type: {type(data)}, {data}")
+        raise RespSerializationError(f"Unsupported RESP type: {type(data)}, {data}")
+
