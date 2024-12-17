@@ -26,7 +26,8 @@ def increment_value(current_value: str | None, increment: int) -> int:
     try:
         return int(current_value) + increment
     except ValueError as e:
-        raise CommandProcessingException("ERR value is not an integer or out of range") from e
+        raise CommandProcessingException(
+            "ERR value is not an integer or out of range") from e
 
 
 def push_values_to_list(
@@ -46,12 +47,15 @@ def push_values_to_list(
     Raises:
         CommandProcessingException: If the current value is not a deque.
     """
+
     if current_value is None:
-        return deque(values)
+        current_value=  deque([])
+    
     if not isinstance(current_value, deque):
         raise CommandProcessingException(
             "WRONGTYPE Operation against a key holding the wrong kind of value"
         )
+    
     for val in values:
         if is_left:
             current_value.appendleft(val)

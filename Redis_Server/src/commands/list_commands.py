@@ -11,6 +11,7 @@ from src.redisDB.redis_db import REDIS_DB
 from src.utils.data_utils import push_values_to_list
 from src.utils.time_utils import has_expired
 
+
 class LPushCommand(RedisCommand):
     """
     Implements the Redis LPush command.
@@ -18,6 +19,15 @@ class LPushCommand(RedisCommand):
     LPush adds one or more values to the left (head) of a list.
     If the key does not exist, a new list is created.
     """
+
+    REQUIRED_ATTRIBUTES = ()
+    POSSIBLE_OPTIONS = ()
+
+    def _parse_arguments(self) -> None:
+        """
+        Overrides base argument parsing to skip validation.
+        """
+        pass
 
     def execute(self) -> int:
         """
@@ -47,6 +57,15 @@ class RPushCommand(RedisCommand):
     RPush adds one or more values to the right (tail) of a list.
     If the key does not exist, a new list is created.
     """
+
+    REQUIRED_ATTRIBUTES = ()
+    POSSIBLE_OPTIONS = ()
+
+    def _parse_arguments(self) -> None:
+        """
+        Overrides base argument parsing to skip validation.
+        """
+        pass
 
     def execute(self) -> int:
         """
