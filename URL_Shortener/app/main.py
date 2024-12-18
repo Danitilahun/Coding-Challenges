@@ -6,7 +6,7 @@ app = FastAPI(title="URL Shortener API", version="1.0.0")
 
 Base.metadata.create_all(bind=engine)
 
-app.include_router(url.router, prefix="/api", tags=["URL Shortener"])
+app.include_router(url.router, tags=["URL Shortener"])
 
 @app.get("/")
 def root():
