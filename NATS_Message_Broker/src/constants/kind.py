@@ -1,12 +1,3 @@
-"""
-This module defines the Kind enum, which represents the types of commands
-or messages in the NATS protocol.
-
-Example:
-    - Kind.CONNECT: Indicates a connection request.
-    - Kind.PING: Indicates a keep-alive ping request.
-"""
-
 from enum import Enum
 
 class Kind(Enum):

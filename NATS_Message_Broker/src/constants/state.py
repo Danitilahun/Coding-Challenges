@@ -1,12 +1,3 @@
-"""
-This module defines the State enum, which represents the states of the
-NATS message parser.
-
-Example:
-    - State.OP_START: The parser is waiting for the start of a command.
-    - State.MSG_PAYLOAD: The parser is processing the payload of a message.
-"""
-
 from enum import Enum
 
 class State(Enum):

@@ -1,14 +1,4 @@
-"""
-This module defines the control character constants (ControlChars) used for parsing
-the NATS protocol.
-
-Example:
-    - ControlChars.CARRIAGE_RETURN: Represents the carriage return character (`\r`).
-    - ControlChars.LINE_FEED: Represents the line feed character (`\n`).
-"""
-
 from enum import IntEnum
-
 class ControlChars(IntEnum):
     """
     Represents ASCII character codes with descriptive names used in the NATS protocol.
@@ -16,6 +6,10 @@ class ControlChars(IntEnum):
     Usage:
         These character codes are used for parsing and interpreting commands
         in the incoming byte stream.
+        
+    Example:
+        - ControlChars.CARRIAGE_RETURN: Represents the carriage return character (`\r`).
+        - ControlChars.LINE_FEED: Represents the line feed character (`\n`).
     """
     CARRIAGE_RETURN = ord('\r')  # Carriage Return (CR)
     LINE_FEED = ord('\n')        # Line Feed (LF)
