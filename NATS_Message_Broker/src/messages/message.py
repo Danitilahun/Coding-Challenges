@@ -1,6 +1,6 @@
 from typing import Optional
-from constants.kind import Kind
-from messages.args import PubArg, SubArg, UnsubArg
+from src.constants.kind import Kind
+from src.messages.args import PubArg, SubArg, UnsubArg
 
 
 class Message:
@@ -30,3 +30,21 @@ class Message:
         self.kind: Kind = kind
         self.data: Optional[bytes] = data
         self.pub_arg: Optional[PubArg] = pub_arg
+
+    def __eq__(self, other):
+        """
+        Determines equality based on attribute values.
+
+        Args:
+            other (Message): The other Message object to compare.
+
+        Returns:
+            bool: True if the messages have the same attributes, otherwise False.
+        """
+        if not isinstance(other, Message):
+            return False
+        return (
+            self.kind == other.kind
+            and self.data == other.data
+            and self.pub_arg == other.pub_arg
+        )
