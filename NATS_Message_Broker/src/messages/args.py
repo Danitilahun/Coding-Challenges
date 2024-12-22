@@ -15,7 +15,6 @@ class SubArg:
     group: Optional[bytes] = None
     sid: int
 
-
 @dataclass
 class PubArg:
     """
@@ -31,7 +30,6 @@ class PubArg:
     reply_to: Optional[bytes] = None
     payload_size: int
     payload: Optional[bytes] = None
-
 
 @dataclass
 class UnsubArg:
