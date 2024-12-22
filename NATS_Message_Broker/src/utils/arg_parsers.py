@@ -1,5 +1,5 @@
 from typing import List
-from messages.args import SubArg, PubArg, UnsubArg
+from src.messages.args import SubArg, PubArg, UnsubArg
 from enum import IntEnum
 
 
@@ -52,28 +52,23 @@ def parse_sub(data: bytes) -> SubArg:
     """
     Parses arguments for the SUB command.
 
-    The SUB command has the following formats:
-        - `SUB <subject> <sid>`: No group specified.
-        - `SUB <subject> <group> <sid>`: With group specified.
-
     Args:
         data (bytes): The raw buffer containing SUB command arguments.
 
     Returns:
         SubArg: A structured SubArg object containing parsed data.
+
+    Raises:
+        ValueError: If the input data does not match the expected format.
     """
     args = split_args(data)
 
-    sub_arg = SubArg(subject=b"", group=None, sid=-1)
+    if len(args) < 2 or len(args) > 3:
+        raise ValueError(f"Invalid SUB command arguments: {data}")
 
-    if len(args) == 2:
-        sub_arg.subject = args[0]
-        sub_arg.group = None
-        sub_arg.sid = int(args[1].decode())
-    elif len(args) == 3:
-        sub_arg.subject = args[0]
+    sub_arg = SubArg(subject=args[0], group=None, sid=int(args[-1].decode()))
+    if len(args) == 3:
         sub_arg.group = args[1]
-        sub_arg.sid = int(args[2].decode())
 
     return sub_arg
 
@@ -82,28 +77,25 @@ def prepare_pub(data: bytes) -> PubArg:
     """
     Parses arguments for the PUB command.
 
-    The PUB command has the following formats:
-        - `PUB <subject> <size>`: Without a reply-to.
-        - `PUB <subject> <reply-to> <size>`: With a reply-to.
-
     Args:
         data (bytes): The raw buffer containing PUB command arguments.
 
     Returns:
         PubArg: A structured PubArg object containing parsed data.
+
+    Raises:
+        ValueError: If the input data does not match the expected format.
     """
     args = split_args(data)
 
-    pub_arg = PubArg(subject=b"", reply_to=None, payload_size=0, payload=None)
+    if len(args) < 2 or len(args) > 3:
+        raise ValueError(f"Invalid PUB command arguments: {data}")
 
-    if len(args) == 2:
-        pub_arg.subject = args[0]
-        pub_arg.reply_to = None
-        pub_arg.payload_size = int(args[1].decode())
-    elif len(args) == 3:
-        pub_arg.subject = args[0]
-        pub_arg.reply_to = args[1]
-        pub_arg.payload_size = int(args[2].decode())
+    pub_arg = PubArg(
+        subject=args[0],
+        reply_to=args[1] if len(args) == 3 else None,
+        payload_size=int(args[-1].decode())
+    )
 
     return pub_arg
 
@@ -112,24 +104,23 @@ def parse_unsub_arg(data: bytes) -> UnsubArg:
     """
     Parses arguments for the UNSUB command.
 
-    The UNSUB command has the following formats:
-        - `UNSUB <sid>`: No max messages specified.
-        - `UNSUB <sid> <max_msgs>`: With max messages specified.
-
     Args:
         data (bytes): The raw buffer containing UNSUB command arguments.
 
     Returns:
         UnsubArg: A structured UnsubArg object containing parsed data.
+
+    Raises:
+        ValueError: If the input data does not match the expected format.
     """
     args = split_args(data)
 
-    unsub_arg = UnsubArg(sid=-1, max_msgs=None)
+    if len(args) < 1 or len(args) > 2:
+        raise ValueError(f"Invalid UNSUB command arguments: {data}")
 
-    if len(args) == 1:
-        unsub_arg.sid = int(args[0].decode())
-    elif len(args) == 2:
-        unsub_arg.sid = int(args[0].decode())
-        unsub_arg.max_msgs = int(args[1].decode())
+    unsub_arg = UnsubArg(
+        sid=int(args[0].decode()),
+        max_msgs=int(args[1].decode()) if len(args) == 2 else None
+    )
 
     return unsub_arg

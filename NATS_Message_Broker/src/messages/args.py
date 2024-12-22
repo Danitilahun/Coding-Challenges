@@ -12,8 +12,8 @@ class SubArg:
         sid (int): The subscription ID.
     """
     subject: bytes
-    group: Optional[bytes] = None
     sid: int
+    group: Optional[bytes] = None
 
 @dataclass
 class PubArg:
@@ -27,8 +27,8 @@ class PubArg:
         payload (Optional[bytes]): The actual message payload.
     """
     subject: bytes
-    reply_to: Optional[bytes] = None
     payload_size: int
+    reply_to: Optional[bytes] = None
     payload: Optional[bytes] = None
 
 @dataclass
