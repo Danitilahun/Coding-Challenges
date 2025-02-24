@@ -187,15 +187,4 @@ The API returns structured error responses:
 
 ---
 
-## **Notes**
-
-1. **Realistic URL Shortener Behavior**:
-   - Short URLs are resolved directly at the root path (`/{key}`).
-   - Public API only includes the `POST /` endpoint for generating short URLs.
-2. **Security**:
-   - Consider adding authentication for sensitive endpoints in production environments.
-
----
-
-This documentation should provide everything needed to interact with and test the URL Shortener API effectively.
-
+Happy Learning! 🎉
